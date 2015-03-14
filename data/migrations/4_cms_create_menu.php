@@ -12,6 +12,7 @@ class CmsCreateMenu extends AbstractMigration
             ->addColumn('machine_name', 'string')
             ->addColumn('website_id', 'integer')
             ->addColumn('position', 'integer')
+            ->addForeignKey('website_id', 'cms_website', 'id')
             ->save();
 
         $this->insertYamlValues('cms_menu_tree');

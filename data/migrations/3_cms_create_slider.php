@@ -11,6 +11,8 @@ class CmsCreateSlider extends AbstractMigration
              ->addColumn('name', 'string')
              ->addColumn('slug', 'string')
              ->addColumn('status_id', 'integer')
+             ->addColumn('website_id', 'integer')
+             ->addForeignKey('website_id', 'cms_website', 'id')
              ->save();
 
         $this->table('cms_slider_item', array())
