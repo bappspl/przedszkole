@@ -822,7 +822,7 @@ return array(
             array(
                 'label' => 'Słowniki',
                 'route' => 'dictionary-main',
-                'class' => 'fa-book',
+                'class' => 'fa fa-book',
                 'id'    => 2,
                 'pages' => array(
                     array(
