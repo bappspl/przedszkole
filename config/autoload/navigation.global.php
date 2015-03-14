@@ -662,11 +662,11 @@ return array(
                 'class' => 'fa fa-picture-o',
                 'id'    => 2,
                 'pages' => array(
-                    array(
-                        'label' => 'Dodaj nowy',
-                        'route' => 'slider/create',
-                        'visibleInPrimary' => true
-                    ),
+//                    array(
+//                        'label' => 'Dodaj nowy',
+//                        'route' => 'slider/create',
+//                        'visibleInPrimary' => true
+//                    ),
                     array(
                         'label' => 'Lista sliderów',
                         'route' => 'slider',
