@@ -276,6 +276,77 @@ return array(
                     ),
                 ),
             ),
+            array(
+                'label' => 'Słowniki',
+                'route' => 'dictionary-main',
+                'class' => 'fa-book',
+                'id'    => 2,
+                'pages' => array(
+                    array(
+                        'label' => 'Lista stanowisk',
+                        'route' => 'dictionary',
+                        'params' => array('category' => 'position'),
+                        'visibleInPrimary' => true,
+                        'website_id' => 1
+                    ),
+                    array(
+                        'label' => 'Tworzenie stanowiska',
+                        'route' => 'dictionary/create',
+                        'params' => array('category' => 'position'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 1
+                    ),
+                    array(
+                        'label' => 'Edycja stanowiska',
+                        'route' => 'dictionary/edit',
+                        'params' => array('category' => 'position'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 1
+                    ),
+                    array(
+                        'label' => 'Lista grup',
+                        'route' => 'dictionary',
+                        'params' => array('category' => 'group'),
+                        'visibleInPrimary' => true,
+                        'website_id' => 1
+                    ),
+                    array(
+                        'label' => 'Tworzenie grupy',
+                        'route' => 'dictionary/create',
+                        'params' => array('category' => 'group'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 1
+                    ),
+                    array(
+                        'label' => 'Edycja grupy',
+                        'route' => 'dictionary/edit',
+                        'params' => array('category' => 'group'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 1
+                    ),
+                    array(
+                        'label' => 'Lista stanowisk',
+                        'route' => 'dictionary',
+                        'params' => array('category' => 'position'),
+                        'visibleInPrimary' => true,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Tworzenie stanowiska',
+                        'route' => 'dictionary/create',
+                        'params' => array('category' => 'position'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Edycja stanowiska',
+                        'route' => 'dictionary/edit',
+                        'params' => array('category' => 'position'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 2
+                    ),
+                ),
+            ),
         ),
     ),
     'service_manager' => array(

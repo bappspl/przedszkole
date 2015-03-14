@@ -44,6 +44,9 @@ return array(
                 'CmsIr\Post\Controller\Post' => array(
                     'all'	=> 'superadmin',
                 ),
+                'CmsIr\Dictionary\Controller\Dictionary' => array(
+                    'all'	=> 'superadmin',
+                ),
             )
         )
     )
