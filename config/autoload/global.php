@@ -2,6 +2,7 @@
 return array(
     'db' => array(
         'driver'         => 'Pdo',
+        'dsn'            => 'mysql:dbname=przedszkole;host=localhost',
         'driver_options' => array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ),
@@ -13,4 +14,6 @@ return array(
          ),
      ),
      'static_salt' => 'aFGQ475SDsdfsaf2342',
+     'app_name' => 'przedszkole',
+     'logger_mail' => false
 );
