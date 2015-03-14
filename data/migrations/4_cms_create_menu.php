@@ -10,6 +10,7 @@ class CmsCreateMenu extends AbstractMigration
         $this->table('cms_menu_tree', array())
             ->addColumn('name', 'string')
             ->addColumn('machine_name', 'string')
+            ->addColumn('website_id', 'integer')
             ->addColumn('position', 'integer')
             ->save();
 
