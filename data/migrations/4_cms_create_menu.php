@@ -33,6 +33,7 @@ class CmsCreateMenu extends AbstractMigration
             ->addColumn('node_id', 'integer')
             ->addColumn('label', 'string')
             ->addColumn('url', 'string')
+            ->addColumn('filename', 'string', array('null'=>true))
             ->addColumn('position', 'integer')
             ->addForeignKey('node_id', 'cms_menu_node', 'id', array('delete' => 'NO_ACTION', 'update' => 'NO_ACTION'))
             ->save();
