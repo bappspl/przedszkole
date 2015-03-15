@@ -20,7 +20,13 @@ class CmsCreateUsers extends AbstractMigration
              ->addColumn('filename', 'string' , array('null' => true))
              ->addColumn('registration_date', 'datetime')
              ->addColumn('registration_token', 'string')
-             ->save();
+             ->addColumn('dictionary_position_id', 'integer' , array('null' => true))
+             ->addColumn('dictionary_group_id', 'integer' , array('null' => true))
+             ->addColumn('website_id', 'integer' , array('null' => true))
+             ->addForeignKey('website_id', 'cms_website', 'id')
+             ->addForeignKey('dictionary_position_id', 'cms_dictionary', 'id')
+             ->addForeignKey('dictionary_group_id', 'cms_dictionary', 'id')
+            ->save();
 
         $this->insertYamlValues('cms_users');
     }

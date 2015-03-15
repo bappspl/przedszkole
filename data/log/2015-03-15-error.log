@@ -1,0 +1,22 @@
+2015-03-15T18:53:17+01:00 CRIT (2): exception 'Zend\Mail\Protocol\Exception\RuntimeException' with message 'Nie mo¿na nawi¹zaæ po³¹czenia, poniewa¿ komputer docelowy aktywnie go odmawia.
+' in C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mail\Protocol\AbstractProtocol.php:209
+Stack trace:
+#0 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mail\Protocol\Smtp.php(149): Zend\Mail\Protocol\AbstractProtocol->_connect('tcp://127.0.0.1...')
+#1 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mail\Transport\Smtp.php(340): Zend\Mail\Protocol\Smtp->connect()
+#2 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mail\Transport\Smtp.php(326): Zend\Mail\Transport\Smtp->connect()
+#3 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mail\Transport\Smtp.php(337): Zend\Mail\Transport\Smtp->lazyLoadConnection()
+#4 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mail\Transport\Smtp.php(204): Zend\Mail\Transport\Smtp->connect()
+#5 C:\xampp\htdocs\web-ir\przedszkole\vendor\cms-ir\cms-ir\src\CmsIr\Users\src\Users\Controller\UsersController.php(415): Zend\Mail\Transport\Smtp->send(Object(Zend\Mail\Message))
+#6 C:\xampp\htdocs\web-ir\przedszkole\vendor\cms-ir\cms-ir\src\CmsIr\Users\src\Users\Controller\UsersController.php(160): CmsIr\Users\Controller\UsersController->sendConfirmationEmail(Object(CmsIr\Users\Model\Users), '5505c70be0faa')
+#7 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): CmsIr\Users\Controller\UsersController->createAction()
+#8 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#10 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#13 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#15 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#17 C:\xampp\htdocs\web-ir\przedszkole\public\index.php(17): Zend\Mvc\Application->run()
+#18 {main}

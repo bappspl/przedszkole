@@ -329,3 +329,43 @@ Stack trace:
 #17 I:\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
 #18 I:\przedszkole\public\index.php(17): Zend\Mvc\Application->run()
 #19 {main}
+2015-03-14T21:01:14+01:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'przedszkole.cms_dictionary' doesn't exist' in C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php:239
+Stack trace:
+#0 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php(239): PDOStatement->execute()
+#1 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(233): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#2 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 C:\xampp\htdocs\web-ir\przedszkole\vendor\cms-ir\cms-ir\src\CmsIr\System\src\System\Model\ModelTable.php(54): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#4 C:\xampp\htdocs\web-ir\przedszkole\vendor\cms-ir\cms-ir\src\CmsIr\Dictionary\src\Dictionary\Model\DictionaryTable.php(61): CmsIr\System\Model\ModelTable->getBy(Array)
+#5 C:\xampp\htdocs\web-ir\przedszkole\vendor\cms-ir\cms-ir\src\CmsIr\Dictionary\src\Dictionary\Controller\DictionaryController.php(26): CmsIr\Dictionary\Model\DictionaryTable->getDictionaryDatatables(Array, Object(Zend\Stdlib\Parameters), 'position', '1')
+#6 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): CmsIr\Dictionary\Controller\DictionaryController->listAction()
+#7 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 C:\xampp\htdocs\web-ir\przedszkole\public\index.php(17): Zend\Mvc\Application->run()
+#17 {main}
+
+Next exception 'Zend\Db\Adapter\Exception\InvalidQueryException' with message 'Statement could not be executed (42S02 - 1146 - Table 'przedszkole.cms_dictionary' doesn't exist)' in C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php:244
+Stack trace:
+#0 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(233): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 C:\xampp\htdocs\web-ir\przedszkole\vendor\cms-ir\cms-ir\src\CmsIr\System\src\System\Model\ModelTable.php(54): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#3 C:\xampp\htdocs\web-ir\przedszkole\vendor\cms-ir\cms-ir\src\CmsIr\Dictionary\src\Dictionary\Model\DictionaryTable.php(61): CmsIr\System\Model\ModelTable->getBy(Array)
+#4 C:\xampp\htdocs\web-ir\przedszkole\vendor\cms-ir\cms-ir\src\CmsIr\Dictionary\src\Dictionary\Controller\DictionaryController.php(26): CmsIr\Dictionary\Model\DictionaryTable->getDictionaryDatatables(Array, Object(Zend\Stdlib\Parameters), 'position', '1')
+#5 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): CmsIr\Dictionary\Controller\DictionaryController->listAction()
+#6 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#11 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#12 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#13 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 C:\xampp\htdocs\web-ir\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 C:\xampp\htdocs\web-ir\przedszkole\public\index.php(17): Zend\Mvc\Application->run()
+#16 {main}
