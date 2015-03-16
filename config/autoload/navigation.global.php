@@ -890,6 +890,142 @@ return array(
                     ),
                 ),
             ),
+            array(
+                'label' => 'Cennik',
+                'route' => 'price-main',
+                'class' => 'fa fa-eur',
+                'id'    => 2,
+                'website_id' => 2,
+                'pages' => array(
+                    array(
+                        'label' => 'Konsultacje i terapie',
+                        'route' => 'price',
+                        'params' => array('category' => 'konsultacje-i-terapie'),
+                        'visibleInPrimary' => true,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Tworzenie usługi',
+                        'route' => 'price/create',
+                        'params' => array('category' => 'konsultacje-i-terapie'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Edycja usługi',
+                        'route' => 'price/edit',
+                        'params' => array('category' => 'konsultacje-i-terapie'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Cennik treningów słuchowych',
+                        'route' => 'price',
+                        'params' => array('category' => 'cennik-treningow-sluchowych-metoda-tomatisa'),
+                        'visibleInPrimary' => true,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Tworzenie usługi',
+                        'route' => 'price/create',
+                        'params' => array('category' => 'cennik-treningow-sluchowych-metoda-tomatisa'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Edycja usługi',
+                        'route' => 'price/edit',
+                        'params' => array('category' => 'cennik-treningow-sluchowych-metoda-tomatisa'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Cennik metody Warnkego',
+                        'route' => 'price',
+                        'params' => array('category' => 'cennik-metody-warnkego'),
+                        'visibleInPrimary' => true,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Tworzenie usługi',
+                        'route' => 'price/create',
+                        'params' => array('category' => 'cennik-metody-warnkego'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Edycja usługi',
+                        'route' => 'price/edit',
+                        'params' => array('category' => 'cennik-metody-warnkego'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 2
+                    ),
+                ),
+            ),
+            array(
+                'label' => 'Galeria',
+                'route' => 'file-main-gallery',
+                'class' => 'fa fa-file-image-o',
+                'id'    => 4,
+                'pages' => array(
+                    array(
+                        'label' => 'Dodaj nową',
+                        'route' => 'file/create',
+                        'params' => array('category' => 'gallery'),
+                        'visibleInPrimary' => true
+                    ),
+                    array(
+                        'label' => 'Lista galerii',
+                        'route' => 'file',
+                        'params' => array('category' => 'gallery'),
+                        'visibleInPrimary' => true
+                    ),
+                    array(
+                        'label' => 'Edycja galerii',
+                        'route' => 'file/edit',
+                        'params' => array('category' => 'gallery'),
+                        'visibleInPrimary' => false
+                    ),
+                    array(
+                        'label' => 'Usuwanie galerii',
+                        'route' => 'file/delete',
+                        'params' => array('category' => 'gallery'),
+                        'visibleInPrimary' => false
+                    ),
+                ),
+            ),
+            array(
+                'label' => 'Dokumenty',
+                'route' => 'file-main-document',
+                'class' => 'fa fa-file-text',
+                'id'    => 4,
+                'pages' => array(
+                    array(
+                        'label' => 'Dodaj nowy',
+                        'route' => 'file/create',
+                        'params' => array('category' => 'document'),
+                        'visibleInPrimary' => true
+                    ),
+                    array(
+                        'label' => 'Lista dokumentów',
+                        'route' => 'file',
+                        'params' => array('category' => 'document'),
+                        'visibleInPrimary' => true
+                    ),
+                    array(
+                        'label' => 'Edycja dokumentu',
+                        'route' => 'file/edit',
+                        'params' => array('category' => 'document'),
+                        'visibleInPrimary' => false
+                    ),
+                    array(
+                        'label' => 'Usuwanie dokumentu',
+                        'route' => 'file/delete',
+                        'params' => array('category' => 'document'),
+                        'visibleInPrimary' => false
+                    ),
+                ),
+            ),
         ),
     ),
     'service_manager' => array(

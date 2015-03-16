@@ -17,6 +17,8 @@ return array(
         'CmsIr\Page',
         'CmsIr\Post',
         'CmsIr\Dictionary',
+        'CmsIr\Price',
+        'CmsIr\File',
     ),
     'module_listener_options' => array(
         'module_paths' => array(

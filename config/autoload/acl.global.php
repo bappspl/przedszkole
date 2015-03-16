@@ -47,6 +47,12 @@ return array(
                 'CmsIr\Dictionary\Controller\Dictionary' => array(
                     'all'	=> 'superadmin',
                 ),
+                'CmsIr\Price\Controller\Price' => array(
+                    'all'	=> 'superadmin',
+                ),
+                'CmsIr\File\Controller\File' => array(
+                    'all'	=> 'superadmin',
+                ),
             )
         )
     )
