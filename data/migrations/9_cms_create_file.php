@@ -11,7 +11,7 @@ class CmsCreateFile extends AbstractMigration
              ->addColumn('name', 'string')
              ->addColumn('slug', 'string')
              ->addColumn('category', 'string')
-             ->addColumn('file_name', 'string')
+             ->addColumn('filename', 'string', array('null' => true))
              ->addColumn('website_id', 'integer')
              ->save();
     }
