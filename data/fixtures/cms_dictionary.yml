@@ -1,0 +1,28 @@
+position_01:
+  name: Nasza kadra
+  category: position
+  website_id: 1
+position_02:
+  name: Wychowawcy grup
+  category: position
+  website_id: 1
+position_03:
+  name: Nasi terapeuci
+  category: position
+  website_id: 2
+group_01:
+  name: Wioska Smerfów
+  category: group
+  website_id: 1
+group_02:
+  name: Przyjaciele Puchatka
+  category: group
+  website_id: 1
+group_03:
+  name: Wesołe Krasnoludki
+  category: group
+  website_id: 1
+group_04:
+  name: Kraina Elfów
+  category: group
+  website_id: 1
