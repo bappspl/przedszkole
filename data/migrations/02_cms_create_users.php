@@ -22,6 +22,7 @@ class CmsCreateUsers extends AbstractMigration
              ->addColumn('registration_token', 'string')
              ->addColumn('dictionary_position_id', 'integer' , array('null' => true))
              ->addColumn('dictionary_group_id', 'integer' , array('null' => true))
+             ->addColumn('position_description', 'text' , array('null' => true))
              ->addColumn('website_id', 'integer' , array('null' => true))
              ->addForeignKey('website_id', 'cms_website', 'id')
              ->addForeignKey('dictionary_position_id', 'cms_dictionary', 'id')
