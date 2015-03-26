@@ -40,5 +40,25 @@ return array(
                 'action'     => 'gallery',
             ),
         ),
-    )
+    ),
+    'viewContact' => array(
+        'type' => 'Segment',
+        'options' => array(
+            'route'    => '/kontakt',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'contact',
+            ),
+        ),
+    ),
+    'contact-form' => array(
+        'type' => 'Segment',
+        'options' => array(
+            'route'    => '/contact-form',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'contactForm',
+            ),
+        ),
+    ),
 );

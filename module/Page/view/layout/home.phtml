@@ -16,6 +16,8 @@
                         ->appendStylesheet($this->basePath() . '/css/bootstrap.min.css')
                         ->appendStylesheet($this->basePath() . '/css/owl.carousel.css')
                         ->appendStylesheet($this->basePath() . '/css/owl.theme.css')
+                        ->appendStylesheet($this->basePath() . '/css/owl.transitions.css')
+                        ->appendStylesheet($this->basePath() . '/css/jquery.fancybox.css')
                         ->appendStylesheet($this->basePath() . '/css/main-style.css')
         ?>
 
@@ -26,6 +28,7 @@
         <!-- Scripts -->
         <?php echo $this->headScript()
             ->appendFile($this->basePath() . '/js/owl.carousel.min.js', 'text/javascript')
+            ->appendFile($this->basePath() . '/js/jquery.fancybox.js', 'text/javascript')
             ->appendFile($this->basePath() . '/js/script.js',   'text/javascript');
         ?>
 

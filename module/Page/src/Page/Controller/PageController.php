@@ -3,9 +3,13 @@
 namespace Page\Controller;
 
 use CmsIr\Price\Model\Price;
+use Zend\Json\Json;
+use Zend\Mime\Message;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
+use Zend\Mime\Message as MimeMessage;
+use Zend\Mime\Part as MimePart;
 
 use Zend\Authentication\AuthenticationService;
 use Zend\Authentication\Result;
@@ -31,14 +35,20 @@ class PageController extends AbstractActionController
 
         $slug = $this->params('slug');
 
-        $page = $this->getPageService()->findOneBySlug($slug);
+        $posts = $this->getPostTable()->getBy(array('status_id' => 1, 'category' => $slug, 'website_id' => 2));
 
-        if(empty($page)){
+        foreach($posts as $post)
+        {
+            $eventFiles = $this->getPostFileTable()->getOneBy(array('post_id' => $post->getId()));
+            $post->setFiles($eventFiles);
+        }
+
+        if(empty($posts)){
             $this->getResponse()->setStatusCode(404);
         }
 
         $viewParams = array();
-        $viewParams['page'] = $page;
+        $viewParams['posts'] = $posts;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;
@@ -90,6 +100,54 @@ class PageController extends AbstractActionController
         return $viewModel;
     }
 
+    public function contactAction()
+    {
+        $this->layout('layout/home');
+
+        $viewModel = new ViewModel();
+        return $viewModel;
+    }
+
+    public function contactFormAction()
+    {
+        $request = $this->getRequest();
+        if ($request->isPost())
+        {
+            $name = $request->getPost('name');
+            $email = $request->getPost('mail');
+            $phone = $request->getPost('phone');
+            $subject = $request->getPost('subject');
+            $content = $request->getPost('content');
+
+            $content = "Imię i nazwisko: <b>" . $name . "</b> <br/>" .
+                "Email: <b>" . $email . "</b> <br/>" .
+                "Telefon kontaktowy: <b>" . $phone . "</b> <br/>" .
+                "Temat: <b>" . $subject . "</b> <br/>" .
+                "Treść: <b>" . $content . "</b> <br/>";
+
+            $html = new MimePart($content);
+            $html->type = "text/html";
+
+            $body = new MimeMessage();
+            $body->setParts(array($html));
+
+            $transport = $this->getServiceLocator()->get('mail.transport');
+            $message = new \Zend\Mail\Message();
+            $this->getRequest()->getServer();
+            $message->addTo('biuro@web-ir.pl')
+                ->addFrom('biuro@web-ir.pl')
+                ->setEncoding('UTF-8')
+                ->setSubject('Wiadomość z formularza kontaktowego')
+                ->setBody($body);
+            $transport->send($message);
+        }
+
+        $params = 'Wiadomość została wysłana poprawnie';
+        $jsonObject = Json::encode($params, true);
+        echo $jsonObject;
+        return $this->response;
+    }
+
     /**
      * @return \CmsIr\Menu\Service\MenuService
      */
@@ -136,5 +194,21 @@ class PageController extends AbstractActionController
     public function getFileService()
     {
         return $this->getServiceLocator()->get('CmsIr\File\Service\FileService');
+    }
+
+    /**
+     * @return \CmsIr\Post\Model\PostTable
+     */
+    public function getPostTable()
+    {
+        return $this->getServiceLocator()->get('CmsIr\Post\Model\PostTable');
+    }
+
+    /**
+     * @return \CmsIr\Post\Model\PostFileTable
+     */
+    public function getPostFileTable()
+    {
+        return $this->getServiceLocator()->get('CmsIr\Post\Model\PostFileTable');
     }
 }

@@ -1,9 +1,9 @@
 <div class="row header">
     <div class="container">
         <header>
-            <a href="#" class="show-hide-menu"><img src="img/menu.png" alt=""/></a>
+            <a href="#" class="show-hide-menu"><img src="/img/menu.png" alt=""/></a>
             <div class="col-sm-5">
-                <img src="img/logo.png" alt=""/>
+                <img src="/img/logo.png" alt=""/>
             </div>
             <div class="col-sm-7">
                 <div class="drop grayscale">
@@ -28,7 +28,7 @@
                         <?php foreach($items as $item): ?>
 
                             <div class="item">
-                                <img src="/files/slider/<?php echo $item->getFilename() ?>" class="img-responsive" alt="image"/>
+                                <img src="<?php echo $this->url('thumb', array('entity' => 'slider', 'size' => '2000x600', 'filename' => $item->getFilename() )); ?>" class="img-responsive" alt="image"/>
                                 <div class="container">
                                     <h1><?php echo $item->getTitle() ?></h1>
                                     <div class="clear"></div>

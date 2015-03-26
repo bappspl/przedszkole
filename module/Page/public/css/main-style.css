@@ -68,7 +68,7 @@ ul.menuH a
 
 ul.menuH ul
 {
-    width:200px;
+    width:310px;
     position: absolute;
     left: -9999px;
     border-top: 0;
@@ -446,9 +446,12 @@ ul.menuH ul
     padding: 0;
 }
 .gallery-img {
-    width: 50%;
+    width: 46%;
     padding: 10px;
-    float:left;
+    float: left;
+    background: red;
+    margin: 5px;
+    height: 140px;
 }
 .gallery-title {
     display: block;
