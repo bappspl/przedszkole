@@ -1,19 +1,44 @@
-<!-- BEGIN FOOTER -->
-<footer class="light-color">
-    <div class="container">
+<div class="col-sm-12 footer-div">
+    <div class="container footer">
         <div class="row">
-            <?php echo $this->partial('partial/layout/footer-about'); ?>
-            <?php echo $this->partial('partial/layout/footer-contact'); ?>
-
-
-
-            <div class="clearfix visible-sm"></div>
-            <?php echo $this->partial('partial/layout/footer-navigation'); ?>
-            <?php echo $this->partial('partial/layout/footer-newsletter'); ?>
-        </div><!-- /.row -->
-    </div><!-- /.container -->
-</footer><!-- /.section -->
-
-<?php echo $this->partial('partial/layout/footer-terms'); ?>
-
-<!-- END FOOTER -->
+            <div class="col-sm-9">
+                <?php echo $this->menuHelper()->renderFooterMenu($menu, null, null, null, null); ?>
+<!--                <ul>-->
+<!--                    <li><a href="#" class="bold">O NAS</a> <span>-</span>-->
+<!--                        <ul>-->
+<!--                            <li> <a href="#">Gabinet</a> - </li>-->
+<!--                            <li> <a href="#">Terapeuci</a> </li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                    <li><a href="#" class="bold">OFERTA</a> <span>-</span>-->
+<!--                        <ul>-->
+<!--                            <li> <a href="#">Arteterapia</a> - </li>-->
+<!--                            <li> <a href="#">Fizjoterapia</a> - </li>-->
+<!--                            <li> <a href="#">Masaż Shantala</a> - </li>-->
+<!--                            <li> <a href="#">Integracja Sensoryczna SI</a> - </li>-->
+<!--                            <li> <a href="#">Neurologopeda</a> - </li>-->
+<!--                            <li> <a href="#">Psycholog</a> - </li>-->
+<!--                            <li> <a href="#">Terapia czaszkowo-krzyżowa</a> - </li>-->
+<!--                            <li> <a href="#">Terapia Warnkego</a> - </li>-->
+<!--                            <li> <a href="#">Pedagog</a> - </li>-->
+<!--                            <li> <a href="#">Trening metodą Tomatisa</a> - </li>-->
+<!--                            <li> <a href="#">Logopeda</a> - </li>-->
+<!--                            <li> <a href="#">Sala doświadczeń</a> - </li>-->
+<!--                            <li> <a href="#">Muzykoterapia</a> - </li>-->
+<!--                            <li> <a href="#">Wczesne wspomaganie Rozwoju</a> - </li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                    <li><a href="#" class="bold">CENNIK</a></li>-->
+<!--                    <li><a href="#" class="bold">GALERIA</a></li>-->
+<!--                    <li><a href="#" class="bold">KONTAKT</a></li>-->
+<!--                </ul>-->
+            </div>
+            <div class="col-sm-3">
+                <h4>Pro Comunications © 2014</h4>
+                <div>Wszelkie prawa zastrzeżone</div>
+                <img src="img/fabryka.png" alt=""/>
+                <div class="project">Projekt i wykonanie:</div>
+            </div>
+        </div>
+    </div>
+</div>

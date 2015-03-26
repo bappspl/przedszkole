@@ -1,0 +1,28 @@
+1:
+  name: psycholog
+  second_name: (z pisemnym raportem)
+  category: konsultacje-i-terapie
+  first: 100 zł
+  second: 80-120 zł
+  website_id: 2
+2:
+  name: konsultacja wstępna
+  second_name: (ważna 6 miesięcy, bez raportu pisemnego)
+  category: cennik-treningow-sluchowych-metoda-tomatisa
+  first: 100 zł
+  second: null
+  website_id: 2
+3:
+  name: diagnoza wstępna
+  second_name: (z pisemnym raportem)
+  category: cennik-metody-warnkego
+  first: 150 zł
+  second: null
+  website_id: 2
+4:
+  name: psycholog
+  second_name: null
+  category: konsultacje-i-terapie
+  first: 100 zł
+  second: 80-120 zł
+  website_id: 2

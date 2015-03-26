@@ -7,6 +7,7 @@ class Price extends Model
 {
     protected $id;
     protected $name;
+    protected $secondName;
     protected $category;
     protected $first;
     protected $second;
@@ -16,6 +17,7 @@ class Price extends Model
     {
         $this->id = (!empty($data['id'])) ? $data['id'] : null;
         $this->name = (!empty($data['name'])) ? $data['name'] : null;
+        $this->secondName = (!empty($data['second_name'])) ? $data['second_name'] : null;
         $this->category = (!empty($data['category'])) ? $data['category'] : null;
         $this->websiteId = (!empty($data['website_id'])) ? $data['website_id'] : null;
         $this->first = (!empty($data['first'])) ? $data['first'] : null;
@@ -118,4 +120,19 @@ class Price extends Model
         $this->second = $second;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getSecondName()
+    {
+        return $this->secondName;
+    }
+
+    /**
+     * @param mixed $secondName
+     */
+    public function setSecondName($secondName)
+    {
+        $this->secondName = $secondName;
+    }
 }

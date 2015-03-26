@@ -1,20 +1,105 @@
-first:
+o-nas:
   node_id: 1
-  label: Strona 1
-  url: strona-1
+  label: o nas
+  url: '#'
   position: 0
-second:
+gabinet:
   node_id: 2
-  label: Strona 2
-  url: strona-2
+  label: Gabinet
+  url: /strona/gabinet
   position: 0
-third:
+terapeuci:
   node_id: 3
-  label: Strona 2-1
-  url: strona-2-1
-  position: 0
-fourth:
+  label: Terapeuci
+  url: /strona/terapeuci
+  position: 1
+oferta:
   node_id: 4
-  label: Strona 2-2
-  url: strona-2-2
+  label: oferta
+  url: '#'
   position: 0
+arteterapia:
+  node_id: 5
+  label: Arteterapia
+  url: /strona/arteterapia
+  position: 0
+fizjo:
+  node_id: 6
+  label: Fizjoterapia
+  url: /strona/fizjoterapia
+  position: 1
+masaz:
+  node_id: 7
+  label: Masaż Shantala
+  url: /strona/masaz-shantala
+  position: 2
+cennik:
+  node_id: 8
+  label: cennik
+  url: /cennik
+  position: 0
+galeria:
+  node_id: 9
+  label: galeria
+  url: /galeria
+  position: 0
+konakt:
+  node_id: 10
+  label: kontakt
+  url: /kontakt
+  position: 0
+integracja:
+  node_id: 11
+  label: Integracja Sensoryczna SI
+  url: /strona/integracja-sensoryczba-si
+  position: 3
+neuro:
+  node_id: 12
+  label: Neurologopeda
+  url: /strona/neurologopeda
+  position: 4
+psycho:
+  node_id: 13
+  label: Psycholog
+  url: /strona/psycholog
+  position: 5
+terapia-czasz:
+  node_id: 14
+  label: Terapia czaszkowo-krzyżowa
+  url: /strona/terapia-czaszkowo-krzyżowa
+  position: 6
+terapia-warn:
+  node_id: 15
+  label: Terapia Warnkego
+  url: /strona/terapia-warnkego
+  position: 7
+pedagog:
+  node_id: 16
+  label: Pedagog
+  url: /strona/pedagog
+  position: 8
+trening:
+  node_id: 17
+  label: Trening metodą Tomatisa
+  url: /strona/trening-metoda-tomatisa
+  position: 9
+logopeda:
+  node_id: 18
+  label: Logopeda
+  url: /strona/logopeda
+  position: 10
+sala:
+  node_id: 19
+  label: Sala doświadczeń
+  url: /strona/sala-doswiadczen
+  position: 11
+muzyka:
+  node_id: 20
+  label: Muzykoterapia
+  url: /strona/muzykoterapia
+  position: 12
+wczesne:
+  node_id: 21
+  label: Wczesne Wspomaganie Rozwoju
+  url: /strona/wczesne-wspomaganie-rozwoju
+  position: 13

@@ -53,6 +53,10 @@ return array(
                 'CmsIr\File\Controller\File' => array(
                     'all'	=> 'superadmin',
                 ),
+                'CmsIr\System\Controller\System' => array(
+                    'createThumb'	=> 'guest',
+                    'saveEditorImages'	=> 'superadmin',
+                ),
             )
         )
     )

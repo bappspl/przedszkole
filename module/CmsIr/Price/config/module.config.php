@@ -25,4 +25,9 @@ return array(
             ),
         ),
     ),
+    'service_manager' => array(
+        'factories' => array(
+            'CmsIr\Price\Service\PriceService' => 'CmsIr\Price\Service\Factory\PriceService',
+        ),
+    ),
 );

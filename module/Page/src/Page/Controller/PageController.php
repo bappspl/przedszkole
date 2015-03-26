@@ -2,6 +2,7 @@
 
 namespace Page\Controller;
 
+use CmsIr\Price\Model\Price;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -16,16 +17,9 @@ class PageController extends AbstractActionController
 {
     public function homeAction()
     {
-//        $menu = $this->getMenuService()->getMenuByMachineName('main-menu');
-//        $this->layout()->menu = $menu;
-
-        $slider = $this->getSliderService()->findOneBySlug('slider-glowny');
-        $items = $slider->getItems();
-
         $this->layout('layout/home');
 
         $viewParams = array();
-        $viewParams['items'] = $items;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;
@@ -48,93 +42,50 @@ class PageController extends AbstractActionController
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;
-
     }
 
-    public function saveSubscriberAjaxAction ()
-    {
-        $request = $this->getRequest();
-
-
-        if ($request->isPost()) {
-            $uncofimerdStatus = $this->getStatusTable()->getOneBy(array('slug' => 'unconfirmed'));
-            $uncofimerdStatusId = $uncofimerdStatus->getId();
-
-            $email = $request->getPost('email');
-            $confirmationCode = uniqid();
-            $subscriber = new Subscriber();
-            $subscriber->setEmail($email);
-            $subscriber->setGroups(array());
-            $subscriber->setConfirmationCode($confirmationCode);
-            $subscriber->setStatusId($uncofimerdStatusId);
-
-            $this->getSubscriberTable()->save($subscriber);
-            $this->sendConfirmationEmail($email, $confirmationCode);
-
-            $jsonObject = Json::encode($params['status'] = 'success', true);
-            echo $jsonObject;
-            return $this->response;
-        }
-
-        return array();
-    }
-
-    public function sendConfirmationEmail($email, $confirmationCode)
-    {
-        $transport = $this->getServiceLocator()->get('mail.transport');
-        $message = new Message();
-        $this->getRequest()->getServer();
-        $message->addTo($email)
-            ->addFrom('mailer@web-ir.pl')
-            ->setSubject('Prosimy o potwierdzenie subskrypcji!')
-            ->setBody("W celu potwierdzenia subskrypcji kliknij w link => " .
-                $this->getRequest()->getServer('HTTP_ORIGIN') .
-                $this->url()->fromRoute('newsletter-confirmation', array('code' => $confirmationCode)));
-        $transport->send($message);
-    }
-
-    public function confirmationNewsletterAction()
+    public function priceAction()
     {
         $this->layout('layout/home');
-        $request = $this->getRequest();
-        $code = $this->params()->fromRoute('code');
-        if (!$code) {
-            return $this->redirect()->toRoute('home');
+
+        $prices = $this->getPriceService()->findAllByWebsiteId(2);
+
+        $konsultacje = array();
+        $tomatis = array();
+        $warnke = array();
+
+        /* @var $price Price */
+        foreach($prices as $price)
+        {
+            if($price->getCategory() == 'konsultacje-i-terapie')
+            {
+                array_push($konsultacje, $price);
+            } elseif($price->getCategory() == 'cennik-treningow-sluchowych-metoda-tomatisa')
+            {
+                array_push($tomatis, $price);
+            } else
+            {
+                array_push($warnke, $price);
+            }
         }
 
         $viewParams = array();
+        $viewParams['konsultacje'] = $konsultacje;
+        $viewParams['tomatis'] = $tomatis;
+        $viewParams['warnke'] = $warnke;
         $viewModel = new ViewModel();
+        $viewModel->setVariables($viewParams);
+        return $viewModel;
+    }
 
-        $subscriber = $this->getSubscriberTable()->getOneBy(array('confirmation_code' => $code));
+    public function galleryAction()
+    {
+        $this->layout('layout/home');
 
-        $confirmedStatus = $this->getStatusTable()->getOneBy(array('slug' => 'confirmed'));
-        $confirmedStatusId = $confirmedStatus->getId();
+        $galleries = $this->getFileService()->findAllByCategoryAndWebsiteId('gallery', 2);
 
-        if($subscriber == false)
-        {
-            $viewParams['message'] = 'Nie istnieje taki użytkownik';
-            $viewModel->setVariables($viewParams);
-            return $viewModel;
-        }
-
-        $subscriberStatus = $subscriber->getStatusId();
-
-        if($subscriberStatus == $confirmedStatusId)
-        {
-            $viewParams['message'] = 'Użytkownik już potwierdził subskrypcję';
-        }
-
-        else
-        {
-            $viewParams['message'] = 'Subskrypcja została potwierdzona';
-            $subscriberGroups = $subscriber->getGroups();
-            $groups = unserialize($subscriberGroups);
-
-            $subscriber->setStatusId($confirmedStatusId);
-            $subscriber->setGroups($groups);
-            $this->getSubscriberTable()->save($subscriber);
-        }
-
+        $viewParams['galleries'] = $galleries;
+        $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;
     }
@@ -164,18 +115,26 @@ class PageController extends AbstractActionController
     }
 
     /**
-     * @return \CmsIr\Newsletter\Model\SubscriberTable
-     */
-    public function getSubscriberTable()
-    {
-        return $this->getServiceLocator()->get('CmsIr\Newsletter\Model\SubscriberTable');
-    }
-
-    /**
      * @return \CmsIr\System\Model\StatusTable
      */
     public function getStatusTable()
     {
         return $this->getServiceLocator()->get('CmsIr\System\Model\StatusTable');
+    }
+
+    /**
+     * @return \CmsIr\Price\Service\PriceService
+     */
+    public function getPriceService()
+    {
+        return $this->getServiceLocator()->get('CmsIr\Price\Service\PriceService');
+    }
+
+    /**
+     * @return \CmsIr\File\Service\FileService
+     */
+    public function getFileService()
+    {
+        return $this->getServiceLocator()->get('CmsIr\File\Service\FileService');
     }
 }

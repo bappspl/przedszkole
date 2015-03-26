@@ -7,13 +7,17 @@ return array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ),
     ),
-     'service_manager' => array(
+    'service_manager' => array(
          'factories' => array(
              'Zend\Db\Adapter\Adapter'
                      => 'Zend\Db\Adapter\AdapterServiceFactory',
          ),
-     ),
-     'static_salt' => 'aFGQ475SDsdfsaf2342',
-     'app_name' => 'przedszkole',
-     'logger_mail' => false
+    ),
+    'static_salt' => 'aFGQ475SDsdfsaf2342',
+    'app_name' => 'przedszkole',
+    'logger_mail' => false,
+    'site' => array(
+        'pro' => 2,
+        'kraina' => 1
+    )
 );

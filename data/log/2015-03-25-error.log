@@ -1,0 +1,15 @@
+2015-03-25T21:36:19+01:00 CRIT (2): exception 'Zend\View\Exception\InvalidArgumentException' with message 'Zend\View\Model\ViewModel::setVariables: expects an array, or Traversable argument; received "NULL"' in I:\przedszkole\vendor\zendframework\zendframework\library\Zend\View\Model\ViewModel.php:260
+Stack trace:
+#0 I:\przedszkole\module\Page\src\Page\Controller\PageController.php(89): Zend\View\Model\ViewModel->setVariables(NULL)
+#1 I:\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): Page\Controller\PageController->galleryAction()
+#2 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#3 I:\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 I:\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 I:\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#6 I:\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#7 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 I:\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 I:\przedszkole\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 I:\przedszkole\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 I:\przedszkole\public\index.php(17): Zend\Mvc\Application->run()
+#12 {main}

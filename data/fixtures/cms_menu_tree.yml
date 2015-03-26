@@ -3,3 +3,8 @@ menu:
   machine_name: main-menu
   website_id: 1
   position: 1
+menu1:
+  name: Menu główne
+  machine_name: main-menu
+  website_id: 2
+  position: 1

@@ -3,3 +3,8 @@ slider:
   slug: slider-glowny
   status_id: 2
   website_id: 1
+slider1:
+  name: Slider główny
+  slug: slider-glowny
+  status_id: 2
+  website_id: 2

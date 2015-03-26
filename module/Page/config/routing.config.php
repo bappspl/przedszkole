@@ -21,27 +21,24 @@ return array(
             ),
         ),
     ),
-    'save-subscriber' => array(
-        'type' => 'Zend\Mvc\Router\Http\Literal',
-        'options' => array(
-            'route'    => '/save-new-subscriber',
-            'defaults' => array(
-                'controller' => 'Page\Controller\Page',
-                'action'     => 'saveSubscriberAjax',
-            ),
-        ),
-    ),
-    'newsletter-confirmation' => array(
+    'viewPrice' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/newsletter-confirmation/:code',
+            'route'    => '/cennik',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
-                'action'     => 'confirmationNewsletter',
-            ),
-            'constraints' => array(
-                'code' => '[a-zA-Z0-9_-]+'
+                'action'     => 'price',
             ),
         ),
     ),
+     'viewGallery' => array(
+        'type' => 'Segment',
+        'options' => array(
+            'route'    => '/galeria',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'gallery',
+            ),
+        ),
+    )
 );

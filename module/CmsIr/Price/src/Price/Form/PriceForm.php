@@ -28,7 +28,19 @@ class PriceForm extends Form
                 'placeholder' => 'Wprowadź nazwę'
             ),
             'options' => array(
-                'label' => 'Nazwa',
+                'label' => 'Tytuł',
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'second_name',
+            'attributes' => array(
+                'id' => 'name',
+                'type'  => 'text',
+                'placeholder' => 'Wprowadź nazwę'
+            ),
+            'options' => array(
+                'label' => 'Podtytuł',
             ),
         ));
 
