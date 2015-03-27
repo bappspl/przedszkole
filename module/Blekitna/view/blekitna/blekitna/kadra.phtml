@@ -19,9 +19,9 @@
                     <?php foreach($boss as $b): ?>
 
                         <div class="col-sm-6">
-                            <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                            <h6>mgr Agnieszka Nowińska</h6>
-                            <div class="position"><b>właściciel</b>, oligofrenopedagog, certyfikowany terapeuta i konsultant metody Tomatisa, terapeuta metody Warnkego</div>
+                            <img class="img-responsive employer" src="/files/users/<?php echo $b->getFilename() ?>" alt=""/>
+                            <h6><?php echo $b->getName() ?>  <?php echo $b->getSurname() ?></h6>
+                            <div class="position"><?php echo $b-> getPositionDescription() ?></div>
                         </div>
 
                     <?php endforeach ?>
@@ -29,64 +29,32 @@
                 </div>
 
             <?php endforeach ?>
-            <div class="row">
-                <div class="col-sm-6">
-                    <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                    <h6>mgr Agnieszka Nowińska</h6>
-                    <div class="position"><b>właściciel</b>, oligofrenopedagog, certyfikowany terapeuta i konsultant metody Tomatisa, terapeuta metody Warnkego</div>
-                </div>
-                <div class="col-sm-6">
-                    <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                    <h6>mgr Agnieszka Nowińska</h6>
-                    <div class="position"><b>właściciel</b>, oligofrenopedagog, certyfikowany terapeuta i konsultant metody Tomatisa, terapeuta metody Warnkego</div>
-                </div>
-            </div>
 
             <div class="clear"></div>
             <div class="row">
-                <div class="col-sm-3">
-                    <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                    <h6>mgr Agnieszka Nowińska</h6>
-                    <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                </div>
-                <div class="col-sm-3">
-                    <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                    <h6>mgr Agnieszka Nowińska</h6>
-                    <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                </div>
-                <div class="col-sm-3">
-                    <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                    <h6>mgr Agnieszka Nowińska</h6>
-                    <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                </div>
-                <div class="col-sm-3">
-                    <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                    <h6>mgr Agnieszka Nowińska</h6>
-                    <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                </div>
 
-                <div class="clear"></div>
+                <?php $people = array_chunk($people, 4) ?>
+                <?php foreach($people as $boss): ?>
 
-                <div class="col-sm-3">
-                    <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                    <h6>mgr Agnieszka Nowińska</h6>
-                    <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                </div>
-                <div class="col-sm-3">
-                    <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                    <h6>mgr Agnieszka Nowińska</h6>
-                    <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                </div>
-                <div class="col-sm-3">
-                    <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                    <h6>mgr Agnieszka Nowińska</h6>
-                    <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                </div>
-                <div class="col-sm-3">
-                    <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                    <h6>mgr Agnieszka Nowińska</h6>
-                    <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                </div>
+                    <div class="row">
+
+                        <?php /* @var $b \CmsIr\Users\Model\Users */ ?>
+                        <?php foreach($boss as $b): ?>
+
+                            <div class="col-sm-3">
+                                <img class="img-responsive employer" src="/files/users/<?php echo $b->getFilename() ?>" alt=""/>
+                                <h6><?php echo $b->getName() ?>  <?php echo $b->getSurname() ?></h6>
+                                <div class="position"><?php echo $b-> getPositionDescription() ?></div>
+                            </div>
+
+                        <?php endforeach ?>
+
+                        <div class="clear"></div>
+
+                    </div>
+
+                <?php endforeach ?>
+
             </div>
 
         </div>
@@ -96,7 +64,7 @@
     <div class="col-sm-12 head">
         <div class="container">
             <div class="clear"></div>
-            <h1>wychowawcy</h1>
+            <h1>wychowawcy grup</h1>
         </div>
     </div>
 
@@ -105,69 +73,35 @@
 
             <div class="clear"></div>
             <div class="row">
-                <div class="col-sm-6">
-                    <p class="position">Wioska Smerfów</p>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                            <h6>mgr Agnieszka Nowińska</h6>
-                            <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                        </div>
-                        <div class="col-sm-6">
-                            <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                            <h6>mgr Agnieszka Nowińska</h6>
-                            <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-6">
-                    <p class="position">Wioska Smerfów</p>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                            <h6>mgr Agnieszka Nowińska</h6>
-                            <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                        </div>
-                        <div class="col-sm-6">
-                            <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                            <h6>mgr Agnieszka Nowińska</h6>
-                            <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-6">
-                    <p class="position">Wioska Smerfów</p>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                            <h6>mgr Agnieszka Nowińska</h6>
-                            <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                        </div>
-                        <div class="col-sm-6">
-                            <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                            <h6>mgr Agnieszka Nowińska</h6>
-                            <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                        </div>
-                    </div>
-                </div>
+                <?php /* @var $type \CmsIr\Dictionary\Model\Dictionary */ ?>
+                    <?php  foreach($typesOfGroups as $type): ?>
 
-                <div class="col-sm-6">
-                    <p class="position">Wioska Smerfów</p>
-                    <div class="row">
                         <div class="col-sm-6">
-                            <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                            <h6>mgr Agnieszka Nowińska</h6>
-                            <div class="position">Tomatisa, terapeuta metody Warnkego</div>
+                            <p class="position"><?php echo $type->getName() ?></p>
+                            <div class="row">
+
+                                <?php /* @var $group \CmsIr\Users\Model\Users */ ?>
+                                <?php foreach($groups as $group): ?>
+
+                                    <?php if($type->getId() == $group->getDictionaryGroupId()): ?>
+
+                                        <div class="col-sm-6">
+                                            <img class="img-responsive employer" src="/files/users/<?php echo $group->getFilename() ?>" alt=""/>
+                                            <h6><?php echo $group->getName() ?>  <?php echo $group->getSurname() ?></h6>
+                                            <div class="position"><?php echo mb_substr($group->getPositionDescription(), 0, 50, 'utf-8') ?> ...</div>
+                                        </div>
+
+                                    <?php endif ?>
+
+                                <?php endforeach ?>
+
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <img class="img-responsive employer" src="img/czlowiek.png" alt=""/>
-                            <h6>mgr Agnieszka Nowińska</h6>
-                            <div class="position">Tomatisa, terapeuta metody Warnkego</div>
-                        </div>
-                    </div>
-                </div>
+
+
+                <?php endforeach ?>
 
                 <div class="clear"></div>
 
