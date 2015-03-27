@@ -2,8 +2,10 @@
 
 namespace Blekitna\Controller;
 
+use CmsIr\Dictionary\Model\Dictionary;
 use CmsIr\File\Model\File;
 use CmsIr\Price\Model\Price;
+use CmsIr\Users\Model\Users;
 use CmsIr\Users\Model\UsersTable;
 use Zend\Json\Json;
 use Zend\Mime\Message;
@@ -180,9 +182,12 @@ class BlekitnaController extends AbstractActionController
         $people = $this->getUsersTable()->getBy(array('website_id' => 1, 'role' => 1, 'dictionary_position_id' => 1));
         $groups = $this->getUsersTable()->getBy(array('website_id' => 1, 'role' => 1, 'dictionary_position_id' => 2));
 
+        $typesOfGroups = $this->getDictionaryTable()->getBy(array('category' => 'group'));
+
         $viewParams['bosses'] = $bosses;
         $viewParams['people'] = $people;
         $viewParams['groups'] = $groups;
+        $viewParams['typesOfGroups'] = $typesOfGroups;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;
@@ -258,5 +263,13 @@ class BlekitnaController extends AbstractActionController
     public function getUsersTable()
     {
         return $this->getServiceLocator()->get('CmsIr\Users\Model\UsersTable');
+    }
+
+    /**
+     * @return \CmsIr\Dictionary\Model\DictionaryTable
+     */
+    public function getDictionaryTable()
+    {
+        return $this->getServiceLocator()->get('CmsIr\Dictionary\Model\DictionaryTable');
     }
 }
