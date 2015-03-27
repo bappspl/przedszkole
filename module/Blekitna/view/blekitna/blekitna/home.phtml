@@ -37,31 +37,40 @@
 
     <div class="col-sm-12">
         <div class="container text">
-            <div class="row">
-                <div class="col-sm-8">
-                    Jesteśmy pierwszym na Śląsku gabinetem zajmującym się terapią i wspieraniem rozwoju dzieci i dorosłych u których stwierdzono:
-                    <ul>
-                        <li>kłopoty z koncetracją i pamięcią</li>
-                        <li>ADHD/ADD (zespół nadpobudliwości ruchowej z deficytem uwagi)</li>
-                        <li>zaburzenia mowy i wady wymowy</li>
-                        <li>trudności w kontaktach społecznych</li>
-                        <li>dyslekcję</li>
-                        <li>zespół Aspergera, Autyzm</li>
-                        <li>porażenie mózgowe</li>
-                        <li>Zespół Downa</li>
-                    </ul>
+            <?php $i = 0 ?>
+            <?php /* @var $post \CmsIr\Post\Model\Post */ ?>
+            <?php foreach($posts as $post): ?>
+                <?php /* @var $file \CmsIr\Post\Model\PostFile */ ?>
+                <?php $file = $post->getFiles() ?>
 
-                    Prowadzimy także zajęcia i terapie:
-                    <ul>
-                        <li>dla osób z dolegliwoścmia takimi jak: nerwice, depresje, bezsenność</li>
-                        <li>dla kobiet w ciąży jako wyciszenie i przygotowanie do porodu</li>
-                        <li>dla dzieci i dorosłych uczących się języków obcych</li>
-                        <li>dla osób zawodowo pracujących głosem (lekarzy, aktorzy, śpiewacy, nauczyciele)</li>
-                        <li>dla studentów, menageróew, oraz wszystkich chętnych jako pomoc w rozwoju własnego potencjału intelektualnego, a także w celu rozwiązywania problemów z głosem i słuchem oraz walce ze stresem.</li>
-                    </ul>
+                <div class="clear"></div>
+                <div class="row">
+                    <?php if($i % 2 != 0): ?>
+                        <div class="col-sm-3">
+                            <?php if(!empty($file)): ?>
+                                <img class="img-responsive" src="/files/post/<?php echo $file->getFilename() ?>" alt=""/>
+                            <?php endif ?>
+                        </div>
+                    <?php endif ?>
+
+                    <div class="col-sm-9">
+
+
+                        <!--                            <h6>Arte - kinezjologia</h6>-->
+                        <br/>
+                        <?php echo $post->getText() ?>
+                    </div>
+                    <?php if($i % 2 == 0): ?>
+                        <div class="col-sm-3">
+                            <?php if(!empty($file)): ?>
+                                <img class="img-responsive" src="/files/post/<?php echo $file->getFilename() ?>" alt=""/>
+                            <?php endif ?>
+                        </div>
+                    <?php endif ?>
                 </div>
-                <div class="col-sm-4"><img class="img-responsive" src="img/dlaczego.png" alt=""/></div>
-            </div>
+
+                <?php $i++ ?>
+            <?php endforeach ?>
             <div class="row more-div">
                 <div class="col-sm-12">
                     <a class="more" href="<?php echo $this->url('viewPage', array('slug' => 'o-nas')) ?>">dowiedz się więcej</a>
