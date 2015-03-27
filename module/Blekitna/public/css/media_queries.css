@@ -1,0 +1,132 @@
+@media screen and (max-width : 1200px) {
+    ul.menuH a {
+        padding: 0 15px;
+    }
+    .owl-buttons {
+        display: none;
+    }
+    .gallery div img:last-child {
+        margin-right: 15px;
+    }
+    .gallery-img {
+        height: auto;
+    }
+}
+
+@media screen and (max-width : 991px) {
+    header .col-sm-5 {
+        width: 32%;
+    }
+    header .col-sm-5 img {
+        width: 100%;
+    }
+    header .col-sm-7 {
+        width: 68%;
+    }
+    .menuH {
+        height: auto;
+    }
+
+    ul.menuH ul {
+        margin-left: 1px;
+    }
+    .item h1, .item h3 {
+        width: 50%;
+    }
+    .contact-data .submit {
+        float: none !important;
+        height: 25px;
+    }
+}
+@media screen and (max-width : 830px) {
+    .item h1, .item h3 {
+        width: 100%;
+        text-align: center;
+    }
+    .item h1 {
+        font-size: 40pt;
+    }
+}
+@media screen and (max-width : 768px) {
+    header  {
+        line-height: 100px;
+    }
+    header .col-sm-5 img {
+        width: 70%;
+    }
+    header .col-sm-7 {
+        width: 100%;
+        display: none;
+    }
+    .show-hide-menu {
+        display: block;
+    }
+    .menuH {
+        width: 100%;
+    }
+    .menuH li {
+        width: 100%;
+        padding-top: 0;
+        background: #c7c812;
+    }
+    ul.menuH a {
+        text-align: left;
+    }
+    .menuH .arrow {
+        display: none;
+    }
+    ul.menuH ul {
+        left: -1px;
+        top: auto;
+        position: relative;
+    }
+    .menuH ul a {
+        color: #4d4d4d;
+    }
+    .menuH img {
+        display: none;
+    }
+    ul.menuH ul {
+        left: 30px;
+    }
+    .menuH li:hover ul, .menuH li.onhover ul {
+        left: 30px;
+    }
+    header .col-sm-5 {
+        width: 50%;
+    }
+
+    .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+        margin: 0 auto;
+    }
+
+    .invitation .container a img {
+        display:none;
+    }
+    .gallery div img:last-child {
+        margin-right: 0;
+    }
+    .contact-data input, .contact-data textarea {
+        margin-bottom: 20px;
+    }
+
+}
+@media screen and (max-width : 550px) {
+    .item h1{
+          font-size: 23pt;
+     }
+    .item h3 {
+        font-size: 15pt;
+    }
+}
+@media screen and (max-width : 500px) {
+    header .col-sm-5 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width : 400px) {
+    .item h1 {
+        margin-bottom: 0;
+    }
+}

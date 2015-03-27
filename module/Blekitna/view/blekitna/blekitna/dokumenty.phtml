@@ -1,0 +1,50 @@
+<div class="row content">
+
+    <div class="col-sm-12 head">
+        <div class="container">
+            <h1>dokumenty</h1>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="container text">
+            <div class="clear"></div>
+
+            <?php $files = array_chunk($documents, 3) ?>
+
+            <?php foreach($files as $file): ?>
+
+            <div class="row">
+
+                <?php foreach($file as $f): ?>
+                    <?php $filename = unserialize($f->getFilename()) ?>
+                    <?php $filename = reset($filename) ?>
+
+                    <div class="col-sm-4 gallery-div">
+                        <a class="doc" href="/files/file/<?php echo $filename ?>">
+                            <?php echo $f->getName() ?>
+                        </a>
+                    </div>
+
+                <?php endforeach ?>
+
+            </div>
+            <div class="clear"></div>
+
+            <?php endforeach ?>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        var text = '';
+        $('.doc').hover(function () {
+            text = $(this).text();
+            $(this).text('');
+        }, function () {
+            $(this).text(text);
+        });
+    });
+</script>

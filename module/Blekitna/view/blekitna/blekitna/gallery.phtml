@@ -1,0 +1,69 @@
+<div class="row content">
+
+    <div class="col-sm-12 head">
+        <div class="container">
+            <h1>galeria</h1>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="container text">
+
+            <?php /* @var $gallery \CmsIr\File\Model\File */ ?>
+            <?php foreach($galleries as $gallery): ?>
+                <?php $files = unserialize($gallery->getFilename()) ?>
+
+                <?php if(!empty($files)): ?>
+
+                    <?php $eight = array_chunk($files, 8) ?>
+
+                    <div class="clear"></div>
+                    <div class="gallery-title">
+                      <div><?php echo $gallery->getName() ?></div>
+                    </div>
+
+                     <div class="row">
+
+                        <?php foreach($eight as $e): ?>
+                            <?php $two = array_chunk($e, 2) ?>
+
+                            <div class="row">
+
+                                <?php foreach($two as $t): ?>
+
+                                    <div class="col-sm-3 gallery-div">
+                                        <a class="fancybox" rel="gallery1" href="/files/file/<?php echo $t[0] ?>">
+                                            <img class="img-circle gallery-img" src="<?php echo $this->url('thumb', array('entity' => 'file', 'size' => '140x140', 'filename' => $t[0])); ?>" alt="image"/>
+                                        </a>
+                                        <?php if(isset($t[1])): ?>
+                                            <a class="fancybox" rel="gallery1" href="/files/file/<?php echo $t[1] ?>">
+                                                <img class="img-circle gallery-img" src="<?php echo $this->url('thumb', array('entity' => 'file', 'size' => '140x140', 'filename' => $t[1])); ?>" alt="image"/>
+                                            </a>
+                                        <?php endif ?>
+                                    </div>
+
+                                <?php endforeach ?>
+
+                             </div>
+
+                        <?php endforeach ?>
+
+                     </div>
+
+                <?php endif ?>
+
+            <?php endforeach ?>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        $(".fancybox").fancybox({
+            openEffect	: 'none',
+            closeEffect	: 'none'
+        });
+    });
+</script>

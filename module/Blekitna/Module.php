@@ -1,6 +1,6 @@
 <?php
 
-namespace Page;
+namespace Blekitna;
 
 use CmsIr\File\Service\FileService;
 use Zend\Mvc\ModuleRouteListener;
@@ -15,11 +15,11 @@ class Module
         $moduleRouteListener->attach($eventManager);
 
         $sm = $e->getApplication()->getServiceManager();
-        $menu = $this->getMenuService($sm)->getMenuByMachineName('main-menu', 2);
+        $menu = $this->getMenuService($sm)->getMenuByMachineName('main-menu', 1);
 
-        $slider = $this->getSliderService($sm)->findOneBySlug('slider-glowny', 2);
+        $slider = $this->getSliderService($sm)->findOneBySlug('slider-glowny', 1);
 
-        $files = $this->getFileService($sm)->findLastPictures(12, 2);
+        $files = $this->getFileService($sm)->findLastPictures(12, 1);
 
         $viewModel = $e->getViewModel();
         $viewModel->menu = $menu;

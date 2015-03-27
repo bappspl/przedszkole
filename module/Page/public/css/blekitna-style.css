@@ -1,0 +1,686 @@
+body {
+    overflow-x: hidden;
+}
+.header {
+    border-bottom: 5px solid #e60b4b;
+}
+header {
+    line-height: 164px;
+}
+
+.menuH
+{
+    margin: 0;
+    width: auto;
+    float:right;
+    height: 164px;
+    position:relative;/*! for IE htc*/
+    z-index:4;/*H2*/
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    padding: 0;
+}
+
+.menuH li
+{
+    padding: 0;
+    float: left;
+    height: auto;
+    position: relative;
+    padding-top: 35px;
+}
+
+ul.menuH a
+{
+    padding: 0 30px;
+    line-height: 36px;
+    font-size: 19px;
+    font-weight: bold;
+    display: block;
+    outline: 0;
+    text-decoration: none;
+    text-align: center;
+}
+.menuH img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 12px;
+}
+.menuH .arrow
+{
+    background: url(../img/arrow.png) no-repeat center center;
+    display:block;
+    margin: 7px auto;
+    width: 14px;
+    height: 10px;
+    position: relative;
+}
+.menuH .arrow-2
+{
+    display:block;
+    margin: 7px auto;
+    width: 14px;
+    height: 10px;
+    position: relative;
+}
+
+/*######sub level###########*/
+
+ul.menuH ul
+{
+    width:200px;
+    position: absolute;
+    left: -9999px;
+    border-top: 0;
+    background: #e60b4b;
+    text-align: left;
+    list-style: none; margin: 0;
+    padding: 10px 0 10px 0;
+    box-sizing:content-box;
+}
+
+.menuH li li
+{
+    float: none;
+    white-space:nowrap;
+    height: auto;
+    padding: 0;
+}
+.menuH ul a
+{
+    padding: 10px 20px;
+    line-height: 20px;
+    font-weight: normal;
+    color: #fff;
+    font-size: 19px;
+    text-align: left;
+}
+
+.menuH ul a:hover
+{
+    text-decoration: underline;
+}
+
+.menuH li:hover ul, .menuH li.onhover ul
+{
+    left: -1px;/*Use this property to change offset of the dropdown*/
+    top: auto;
+}
+
+.menuH li:hover .dropToLeft, .menuH li.onhover .dropToLeft
+{
+    left: auto;
+    right: -1px;
+    top: auto;
+}
+.menuH ul ul
+{
+    border-top: 1px solid #DDD;
+}
+
+.menuH li:hover ul ul, .menuH li:hover ul ul ul, .menuH li:hover ul ul ul ul,
+.menuH li.onhover ul ul, .menuH li.onhover ul ul ul, .menuH li.onhover ul ul ul ul
+{
+    left: -9999px;
+    top:0;
+}
+
+.menuH li li:hover ul, .menuH li li li:hover ul, .menuH li li li li:hover ul,
+.menuH li li.onhover ul, .menuH li li li.onhover ul, .menuH li li li li.onhover ul
+{
+    left: 200px;
+}
+
+
+.grayscale li:hover,  .active {
+    background: #e60b4b;
+}
+.owl-page.active {
+    background: none;
+}
+.grayscale li:hover a img
+{
+    filter: brightness(10);
+    -webkit-filter: brightness(10);
+    -moz-filter: brightness(10);
+    -o-filter: brightness(10);
+    -ms-filter: brightness(10);
+}
+
+.grayscale a img
+{
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+}
+
+.active a img
+{
+    filter: brightness(10);
+    -webkit-filter: brightness(10);
+    -moz-filter: brightness(10);
+    -o-filter: brightness(10);
+    -ms-filter: brightness(10);
+}
+
+header .col-sm-3 img {
+    max-height: 115px;
+}
+
+.grayscale a {
+    text-decoration: none;
+}
+.grayscale a {
+    color: #0c3f86;
+}
+
+.grayscale li:hover a .arrow,  .active a .arrow {
+    background: url(../img/arrow-hover.png) no-repeat center center;
+}
+.grayscale li:hover a,  .active a {
+    color: #fff;
+}
+.show-hide-menu {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    display: none;
+    line-height: 10px;
+    z-index: 1;
+}
+
+.item .container {
+    position: absolute;
+    top: 12%;
+    width: 1170px;
+    margin-left: -585px;
+    left: 50%;
+}
+.item h1 {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    color: #fff;
+    background: #e60b4b;
+    font-size: 40pt;
+    text-align: left;
+    padding: 10px 15px;
+    width: auto;
+    margin-bottom: 0;
+    float: left;
+    margin-left: 50px;
+}
+.item h3 {
+    color: #fff;
+    background: #96c11f;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 23pt;
+    width: auto;
+    margin-top: 0;
+    text-align: right;
+    float: left;
+    padding: 5px 10px;
+    clear: both;
+    margin-left: 50px;
+}
+.owl-controls {
+    position: absolute;
+    width: 1170px;
+    margin-left: -585px;
+    left: 50%;
+    top: 0;
+}
+.owl-pagination {
+    position: absolute;
+    width: 1170px;
+    margin-left: -585px;
+    left: 50%;
+}
+.owl-prev {
+    left: -52px;
+    position: absolute;
+    top: 240px;
+}
+.owl-next {
+    right: -52px;
+    position: absolute;
+    top: 240px;
+}
+.content {
+    background: url(../img/bg.png) no-repeat;
+    background-position: 0 100px;
+    /*background-size: cover;*/
+    min-height: 200px;
+    height: auto;
+    padding-bottom: 40px;
+}
+.box {
+    margin: 40px 0 40px 0;
+}
+.box h3, .box h4 {
+    text-align: center;
+}
+.box h3 a{
+    color: #e60b4b;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 30px;
+}
+.box h4 {
+    font-family: 'Open Sans';
+    color: #808080;
+}
+.box .col-sm-3 img {
+    margin: 0 auto;
+}
+
+.invitation {
+    background: #e60b4b;
+    margin-top: 40px;
+}
+.invitation .container {
+    padding: 30px;
+    text-align: center;
+}
+.invitation .container a {
+    color: #fff;
+    font-family: 'Open Sans';
+    font-size: 35px;
+}
+.big-arrow {
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+.invitation .container a:hover {
+    text-decoration: none;
+}
+.invitation .container a:hover .big-arrow {
+    margin-left: 50px;
+}
+
+.head h1 {
+    font-family: 'Open Sans';
+    font-weight: 800;
+    font-size: 35px;
+    color: #003580;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.text {
+    font-family: 'Open Sans';
+    color: #4d4d4d;
+}
+.text ul {
+    list-style: none;
+}
+
+.text li {
+    padding-left: 1em;
+    text-indent: -.7em;
+}
+
+.text li:before {
+    content: '\2022';
+    display: block;
+    position: relative;
+    max-width: 0;
+    max-height: 0;
+    left: -10px;
+    top: 0;
+    color: #003580;
+    font-size: 20px;
+}
+
+.contact {
+    background: #003580;
+    color: #fff;
+    font-family: 'Open Sans';
+    padding-bottom: 40px;
+    border-bottom: 2px solid #9eca3e;
+}
+.contact a {
+    color: #fff;
+}
+.contact h4 {
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+}
+.contact h4, .contact span {
+    font-weight: 600;
+    display: block;
+}
+.contact span {
+    font-size: 17px;
+}
+.contact-head {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #96c11f;
+}
+.more-div {
+    text-align: center;
+    margin-top: 15px;
+    clear: both;
+}
+.more {
+    background: #003580;
+    padding: 5px 12px;
+    border-radius: 12px;
+    color: #fff;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.more:hover {
+    background: #054cb1;
+    text-decoration: none;
+    color: #fff;
+}
+.contact .more {
+    background: #96c11f;
+    padding: 5px 12px;
+    border-radius: 12px;
+    color: #fff;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.contact .more:hover {
+    background: #719804;
+    text-decoration: none;
+    color: #fff;
+}
+.gallery div img {
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    width: 20%;
+}
+.gallery div img:last-child {
+    margin-right: 0;
+}
+.footer-div {
+    background: url(../img/bottom.png) no-repeat;
+    background-position: right bottom;
+    padding: 33px 0 45px;
+}
+.footer {
+    color: #808080;
+    font-family: 'Open Sans';
+}
+
+.footer a {
+    color: #808080;
+    font-weight: 300;
+}
+.footer a.bold {
+    font-weight: 600;
+}
+.footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+.footer ul li span {
+    color: #e5094b;
+}
+.footer ul li {
+    font-weight: 600;
+    clear: both;
+}
+.footer ul li ul {
+    margin-top: -19px;
+    padding-left: 65px;
+}
+.footer ul li ul li {
+    float: left;
+    clear: none;
+}
+
+.footer .col-sm-3 h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: right;
+    font-family: 'Open Sans';
+}
+.footer .col-sm-3 div {
+    text-align: right;
+    font-family: 'Open Sans';
+}
+.footer .col-sm-3 div.project {
+    margin-top: 20px;
+}
+.footer .col-sm-3 img {
+    float: right;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.head h5 {
+    color: #4d4d4d;
+    font-family: 'Open Sans';
+    font-weight: 800;
+    text-align: center;
+    font-size: 20px;
+}
+.text h6 {
+    color: #e5094b;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+.clear {
+    display: block;
+    height: 40px;
+    clear: both;
+}
+.employer {
+    margin: 0 auto;
+}
+.text .position {
+    text-align: center;
+}
+.gallery-div {
+    padding: 0;
+}
+.gallery-img {
+    width: 50%;
+    padding: 10px;
+    float:left;
+}
+.gallery-title {
+    display: block;
+    background: #003580;
+    color: #fff;
+    width: 300px;
+    font-family: 'Open Sans';
+    padding: 5px 0 5px;
+    border-radius: 25px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.price {
+    font-family: 'open sans';
+}
+.price-title {
+    text-transform: uppercase;
+    color: #e5094b;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.contact-title {
+    color: #e5094b;
+    font-weight: 600;
+}
+.head-price:first-child {
+    background: #fff;
+}
+.head-price {
+    font-weight: 600;
+    text-align: center;
+    background: #e6e6e6;
+    border: 1px solid #fff;
+    padding: 4px 0 4px;
+}
+.price-content {
+    text-align: center;
+    background: #f2f2f2;
+    border: 1px solid #fff;
+    padding: 4px 0 4px;
+}
+.price .row .price-content:first-child {
+    font-weight: 600;
+}
+.price .row .price-content:first-child span {
+    font-weight: 300;
+}
+.contact-list li:before {
+    content: '';
+}
+.contact-list {
+    padding-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.contact-list li {
+    margin-bottom: 10px;
+}
+.contact-list li img {
+    margin-right: 10px;
+}
+.contact-list li a, .contact-list li {
+    color: #4d4d4d;
+    font-family: 'Open Sans';
+}
+.contact-data {
+    font-family: 'Open Sans';
+    color: #4d4d4d;
+}
+.contact-data p {
+    color: #003580;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.contact-data input, .contact-data textarea {
+    width: 100%;
+    color: #4d4d4d;
+    border-radius: 30px;
+    padding: 9px 9px 9px 40px;
+    border:0;
+}
+.contact-data textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100px;
+    border-radius: 15px;
+    background: #ededed url(../img/form-content.png) no-repeat;
+    background-position: 5px 4px;
+}
+.contact-data input[name="name"] {
+    background: #ededed url(../img/form-user.png) no-repeat;
+    background-position: 5px 3px;
+}
+.contact-data input[name="mail"] {
+    background: #ededed url(../img/form-mail.png) no-repeat;
+    background-position: 5px 3px;
+}
+.contact-data input[name="phone"] {
+    background: #ededed url(../img/form-phone.png) no-repeat;
+    background-position: 5px 3px;
+}
+.contact-data input[name="subject"] {
+    background: #ededed url(../img/form-subject.png) no-repeat;
+    background-position: 5px 3px;
+}
+.contact-data input[type="submit"] {
+    background: url(../img/form-send.png) no-repeat;
+    border: 0;
+    width: 100%;
+    height: 40px;
+    background-size: contain;
+    transition: all 0.3s;
+}
+.contact-data input[type="submit"]:hover {
+    background: url(../img/form-send-hover.png) no-repeat;
+    background-size: contain;
+}
+.doc {
+    background: url(../img/doc.png) no-repeat;
+    height: 300px;
+    width: 300px;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 33px;
+    padding-top: 75px;
+    transition: all 0.3s;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.doc:hover {
+    background: url(../img/doc-hover.png) no-repeat;
+}
+
+.scroll {
+    display: block;
+    text-align: center;
+    background: #e5094b;
+    color: #fff;
+    border-radius: 30px;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 15px;
+    transition: all 0.3s;
+}
+.scroll:hover {
+    background: #ab0134;
+    text-decoration: none;
+    color: #fff;
+}
+p.position {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #96c11f;
+    text-align: center;
+}
+.price ul {
+    padding: 0;
+}
+.price li {
+    padding-left: 0;
+    clear: both;
+    margin-bottom: 30px;
+}
+.price li:before {
+    content: '';
+}
+.price li div {
+    width: 75px;
+    float: left;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    background: #e5094b;
+    padding: 10px;
+    border-radius: 50%;
+    color: #fff;
+}
+.price li p {
+    margin-left: 100px;
+    font-weight: 600;
+    padding-top: 20px;
+}

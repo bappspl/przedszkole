@@ -3,24 +3,20 @@
 return array(
     'router' => array(
         'routes' =>  array_merge(
-            include __DIR__ . '/pro-communucations.routing.config.php',
-            include __DIR__ . '/intro.routing.config.php'
+            include __DIR__ . '/blekitna-kraina.routing.config.php'
         )
     ),
     'controllers' => array(
         'invokables' => array(
-            'Page\Controller\Page' => 'Page\Controller\PageController',
-            'Page\Controller\Intro' => 'Page\Controller\IntroController',
-
+            'Blekitna\Controller\Blekitna' => 'Blekitna\Controller\BlekitnaController'
         ),
     ),
     'view_manager' => array(
         'doctype'                  => 'HTML5',
         'template_map' => array(
-            'layout/home' => __DIR__ . '/../view/layout/home.phtml',
-            'layout/intro' => __DIR__ . '/../view/layout/intro.phtml',
-            'partial/layout/header' => __DIR__ . '/../view/partial/layout/header.phtml',
-            'partial/layout/footer' => __DIR__ . '/../view/partial/layout/footer.phtml',
+            'layout/blekitna' => __DIR__ . '/../view/layout/blekitna.phtml',
+            'partial-blekitna/layout/header' => __DIR__ . '/../view/partial/layout/header.phtml',
+            'partial-blekitna/layout/footer' => __DIR__ . '/../view/partial/layout/footer.phtml',
         ),
         'template_path_stack' => array(
             'page_home_site' => __DIR__ . '/../view'

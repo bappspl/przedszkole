@@ -1,7 +1,8 @@
 <?php
 
-namespace Page\Controller;
+namespace Blekitna\Controller;
 
+use CmsIr\File\Model\File;
 use CmsIr\Price\Model\Price;
 use CmsIr\Users\Model\UsersTable;
 use Zend\Json\Json;
@@ -18,11 +19,11 @@ use Zend\Authentication\Storage\Session as SessionStorage;
 use Zend\Db\Adapter\Adapter as DbAdapter;
 use Zend\Authentication\Adapter\DbTable as AuthAdapter;
 
-class PageController extends AbstractActionController
+class BlekitnaController extends AbstractActionController
 {
     public function homeAction()
     {
-        $this->layout('layout/home');
+        $this->layout('layout/blekitna');
 
         $viewParams = array();
         $viewModel = new ViewModel();
@@ -32,11 +33,11 @@ class PageController extends AbstractActionController
 
     public function viewPageAction()
     {
-        $this->layout('layout/home');
+        $this->layout('layout/blekitna');
 
         $slug = $this->params('slug');
 
-        $posts = $this->getPostTable()->getBy(array('status_id' => 1, 'category' => $slug, 'website_id' => 2));
+        $posts = $this->getPostTable()->getBy(array('status_id' => 1, 'category' => $slug, 'website_id' => 1));
 
         foreach($posts as $post)
         {
@@ -57,9 +58,9 @@ class PageController extends AbstractActionController
 
     public function priceAction()
     {
-        $this->layout('layout/home');
+        $this->layout('layout/blekitna');
 
-        $prices = $this->getPriceService()->findAllByWebsiteId(2);
+        $prices = $this->getPriceService()->findAllByWebsiteId(1);
 
         $konsultacje = array();
         $tomatis = array();
@@ -91,9 +92,9 @@ class PageController extends AbstractActionController
 
     public function galleryAction()
     {
-        $this->layout('layout/home');
+        $this->layout('layout/blekitna');
 
-        $galleries = $this->getFileService()->findAllByCategoryAndWebsiteId('gallery', 2);
+        $galleries = $this->getFileService()->findAllByCategoryAndWebsiteId('gallery', 1);
 
         $viewParams['galleries'] = $galleries;
         $viewModel = new ViewModel();
@@ -103,7 +104,7 @@ class PageController extends AbstractActionController
 
     public function contactAction()
     {
-        $this->layout('layout/home');
+        $this->layout('layout/blekitna');
 
         $viewModel = new ViewModel();
         return $viewModel;
@@ -149,14 +150,29 @@ class PageController extends AbstractActionController
         return $this->response;
     }
 
-    public function terapeuciAction()
+    public function dokumentyAction()
     {
-        $this->layout('layout/home');
-        $boss = $this->getUsersTable()->getOneBy(array('dictionary_position_id' => 8));
-        $people = $this->getUsersTable()->getBy(array('dictionary_position_id' => 3));
+        $this->layout('layout/blekitna');
 
-        $viewParams['boss'] = $boss;
+        $documents = $this->getFileService()->findAllByCategoryAndWebsiteId('document', 1);
+
+        $viewParams['documents'] = $documents;
+        $viewModel = new ViewModel();
+        $viewModel->setVariables($viewParams);
+        return $viewModel;
+    }
+
+    public function kadraAction()
+    {
+        $this->layout('layout/blekitna');
+
+        $bosses = $this->getUsersTable()->getBy(array('website_id' => 1, 'role' => 3, 'dictionary_position_id' => 1));
+        $people = $this->getUsersTable()->getBy(array('website_id' => 1, 'role' => 1, 'dictionary_position_id' => 1));
+        $groups = $this->getUsersTable()->getBy(array('website_id' => 1, 'role' => 1, 'dictionary_position_id' => 2));
+
+        $viewParams['bosses'] = $bosses;
         $viewParams['people'] = $people;
+        $viewParams['groups'] = $groups;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;

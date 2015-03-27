@@ -4,7 +4,7 @@ return array(
     'home' => array(
         'type' => 'Zend\Mvc\Router\Http\Literal',
         'options' => array(
-            'route'    => '/',
+            'route'    => '/pro-communications',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'home',
@@ -14,7 +14,7 @@ return array(
     'viewPage' => array(
         'type' => 'Zend\Mvc\Router\Http\Segment',
         'options' => array(
-            'route'    => '/strona/:slug',
+            'route'    => '/pro-communications/strona/:slug',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'viewPage',
@@ -24,7 +24,7 @@ return array(
     'viewPrice' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/cennik',
+            'route'    => '/pro-communications/cennik',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'price',
@@ -34,7 +34,7 @@ return array(
      'viewGallery' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/galeria',
+            'route'    => '/pro-communications/galeria',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'gallery',
@@ -44,7 +44,7 @@ return array(
     'viewContact' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/kontakt',
+            'route'    => '/pro-communications/kontakt',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'contact',
@@ -54,10 +54,20 @@ return array(
     'contact-form' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/contact-form',
+            'route'    => '/pro-communications/contact-form',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'contactForm',
+            ),
+        ),
+    ),
+    'terapeuci' => array(
+        'type' => 'Segment',
+        'options' => array(
+            'route'    => '/pro-communications/terapeuci',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'terapeuci',
             ),
         ),
     ),
