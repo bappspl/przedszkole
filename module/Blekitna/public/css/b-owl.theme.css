@@ -58,7 +58,7 @@
 .owl-theme .owl-controls.clickable .owl-page:hover span{
 	filter: Alpha(Opacity=100);/*IE7 fix*/
 	opacity: 1;
-    background: #c7c812;
+    background: #fff;
 }
 
 /* If PaginationNumbers is true */

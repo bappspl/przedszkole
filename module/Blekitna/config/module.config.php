@@ -19,7 +19,7 @@ return array(
             'partial-blekitna/layout/footer' => __DIR__ . '/../view/partial/layout/footer.phtml',
         ),
         'template_path_stack' => array(
-            'page_home_site' => __DIR__ . '/../view'
+            'page_home_site_asd' => __DIR__ . '/../view'
         ),
         'display_exceptions' => true,
     ),

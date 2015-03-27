@@ -8,8 +8,8 @@
     .gallery div img:last-child {
         margin-right: 15px;
     }
-    .gallery-img {
-        height: auto;
+    .item h1, .item h3 {
+        margin-left: 100px;
     }
 }
 
@@ -37,6 +37,70 @@
         float: none !important;
         height: 25px;
     }
+
+
+    header .col-sm-9 {
+        width: 100%;
+        display: none;
+    }
+    .show-hide-menu {
+        display: block;
+    }
+    .menuH {
+        width: 100%;
+    }
+    .menuH li {
+        width: 100%;
+        padding-top: 0;
+        background: #e60b4b;
+    }
+    ul.menuH a {
+        text-align: left;
+        color: #fff;
+    }
+    .menuH .arrow {
+        display: none;
+    }
+    ul.menuH ul {
+        left: -1px;
+        top: auto;
+        position: relative;
+    }
+    .menuH ul a {
+        color: #fff;
+    }
+    .menuH img {
+        display: none;
+    }
+    ul.menuH ul {
+        left: 30px;
+    }
+    .menuH li:hover ul, .menuH li.onhover ul {
+        left: 30px;
+    }
+    header .col-sm-5 {
+        width: 50%;
+    }
+
+    .item .container {
+        width: 100%;
+        margin-left: -50%;
+        left: 50%;
+
+    }
+    .item .container h1, .item .container h3 {
+        margin-left: 0;
+    }
+
+    .doc {
+        width: 200px;
+        height: 200px;
+        background-size: cover;
+        font-size: 20px;
+    }
+    .doc:hover {
+        background-size: cover;
+    }
 }
 @media screen and (max-width : 830px) {
     .item h1, .item h3 {
@@ -51,49 +115,8 @@
     header  {
         line-height: 100px;
     }
-    header .col-sm-5 img {
-        width: 70%;
-    }
-    header .col-sm-7 {
-        width: 100%;
-        display: none;
-    }
-    .show-hide-menu {
-        display: block;
-    }
-    .menuH {
-        width: 100%;
-    }
-    .menuH li {
-        width: 100%;
-        padding-top: 0;
-        background: #c7c812;
-    }
-    ul.menuH a {
-        text-align: left;
-    }
-    .menuH .arrow {
-        display: none;
-    }
-    ul.menuH ul {
-        left: -1px;
-        top: auto;
-        position: relative;
-    }
-    .menuH ul a {
-        color: #4d4d4d;
-    }
-    .menuH img {
-        display: none;
-    }
-    ul.menuH ul {
-        left: 30px;
-    }
-    .menuH li:hover ul, .menuH li.onhover ul {
-        left: 30px;
-    }
-    header .col-sm-5 {
-        width: 50%;
+    header .col-sm-3 img {
+        max-height: 70px;
     }
 
     .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
@@ -109,6 +132,10 @@
     .contact-data input, .contact-data textarea {
         margin-bottom: 20px;
     }
+    .price li {
+        margin-bottom: 45px;
+    }
+
 
 }
 @media screen and (max-width : 550px) {
@@ -128,5 +155,9 @@
 @media screen and (max-width : 400px) {
     .item h1 {
         margin-bottom: 0;
+    }
+
+    .item .container h1, .item .container h3 {
+        font-size: 10pt;
     }
 }
