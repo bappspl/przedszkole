@@ -27,7 +27,17 @@ class BlekitnaController extends AbstractActionController
     {
         $this->layout('layout/blekitna');
 
+        $posts = $this->getPostTable()->getBy(array('status_id' => 1, 'category' => 'o-nas', 'website_id' => 1));
+
+        foreach($posts as $post)
+        {
+            $eventFiles = $this->getPostFileTable()->getOneBy(array('post_id' => $post->getId()));
+            $post->setFiles($eventFiles);
+        }
+
         $viewParams = array();
+        $viewParams['posts'] = $posts;
+
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;

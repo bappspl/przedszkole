@@ -65,6 +65,34 @@ return array(
                 'id'    => 2,
                 'pages' => array(
                     // Błękitna kraina
+					array(
+                        'label' => 'O nas',
+                        'route' => 'post',
+                        'params' => array('category' => 'o-nas'),
+                        'visibleInPrimary' => true,
+                        'website_id' => 1
+                    ),
+					array(
+                        'label' => 'Tworzenie sekcji - O nas',
+                        'route' => 'post/create',
+                        'params' => array('category' => 'o-nas'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 1
+                    ),
+                    array(
+                        'label' => 'Edycja sekcji - O nas',
+                        'route' => 'post/edit',
+                        'params' => array('category' => 'o-nas'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 1
+                    ),
+                    array(
+                        'label' => 'Podgląd sekcji - O nas',
+                        'route' => 'post/preview',
+                        'params' => array('category' => 'o-nas'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 1
+                    ),
                     array(
                         'label' => 'Nasze przedszkole',
                         'route' => 'post',
