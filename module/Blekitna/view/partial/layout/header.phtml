@@ -2,10 +2,10 @@
     <div class="container">
         <header>
             <a href="#" class="show-hide-menu"><img src="/img/menu.png" alt=""/></a>
-            <div class="col-sm-5">
+            <div class="col-sm-3">
                 <img src="/img/logo.png" alt=""/>
             </div>
-            <div class="col-sm-7">
+            <div class="col-sm-9">
                 <div class="drop grayscale">
 
                     <?php echo $this->menuHelper()->renderMenu($menu, 'menuH decor1', null, null, null); ?>
@@ -31,7 +31,6 @@
                                 <img src="<?php echo $this->url('thumb', array('entity' => 'slider', 'size' => '2000x600', 'filename' => $item->getFilename() )); ?>" class="img-responsive" alt="image"/>
                                 <div class="container">
                                     <h1><?php echo $item->getTitle() ?></h1>
-                                    <div class="clear"></div>
                                     <h3><?php echo $item->getDescription() ?></h3>
                                 </div>
                             </div>
