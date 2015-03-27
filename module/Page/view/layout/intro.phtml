@@ -1,0 +1,57 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle($this->translate('Przedszkole')) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        // MAIN CSS (REQUIRED ALL PAGE)
+                        ->appendStylesheet($this->basePath() . '/css/bootstrap.min.css')
+                        ->appendStylesheet($this->basePath() . '/css/intro-style.css')
+        ?>
+
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ek+Mukta">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,300&subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+
+    </head>
+    <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="frame">
+                    <span class="helper"></span>
+                    <img src="/img/pro-communications.png" class="img-responsive logo" alt=""/>
+
+                    <h2>
+                        Pro Comunications
+                        Gabinet terapii
+                        i rozwoju
+                    </h2>
+                    <a href="<?php echo $this->url('home') ?>" class="pro">wejdź</a>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="frame frame-blekitna">
+                    <span class="helper"></span>
+                    <img src="/img/blekitna-kraina.png" class="img-responsive logo logo-blekitna" alt=""/>
+
+                    <h2 class="h2-blekitna">
+                        Niepubliczny specjalny
+                        punkt przedszkolny
+                        "Błękitna kraina"
+                    </h2>
+                    <a href="<?php echo $this->url('blekitna-home') ?>" class="pro">wejdź</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

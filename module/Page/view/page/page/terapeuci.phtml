@@ -1,0 +1,49 @@
+<div class="row content">
+
+    <div class="col-sm-12 head">
+        <div class="container">
+            <h1>nasi terapeuci</h1>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="container text">
+            <?php /* @var $boss \CmsIr\Users\Model\Users */ ?>
+            <?php if(!empty($boss)): ?>
+                <div class="clear"></div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <img class="img-responsive employer" src="/files/users/<?php echo $boss->getFilename() ?>" alt="boss"/>
+                        <h6><?php echo $boss->getName() ?> <?php echo $boss->getSurname() ?></h6>
+                        <div class="position"><b>właściciel</b><?php echo $boss->getPositionDescription() ?></div>
+                    </div>
+                </div>
+            <?php endif ?>
+
+            <div class="clear"></div>
+            <div class="row">
+                <?php if(!empty($people)): ?>
+                    <?php $array = array_chunk($people, 4) ?>
+
+                    <?php foreach($array as $four): ?>
+
+                        <?php /* @var $person \CmsIr\Users\Model\Users */ ?>
+                        <?php foreach($four as $person): ?>
+
+                            <div class="col-sm-3">
+                                <img class="img-responsive employer" src="/files/users/<?php echo $person->getFilename() ?>" alt=""/>
+                                <h6><?php echo $person->getName() ?> <?php echo $person->getSurname() ?></h6>
+                                <div class="position"><?php echo $person->getPositionDescription() ?></div>
+                            </div>
+
+                        <?php endforeach ?>
+
+                        <div class="clear"></div>
+
+                    <?php endforeach ?>
+
+                <?php endif ?>
+            </div>
+        </div>
+    </div>
+</div>

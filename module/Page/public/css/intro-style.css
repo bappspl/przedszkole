@@ -1,0 +1,100 @@
+body {
+    background: url(../img/bg-intro.png) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+}
+.logo {
+    vertical-align: middle;
+    position: relative;
+    height: 120px;
+    margin: 0 auto;
+}
+.frame {
+    white-space: nowrap;
+    text-align: center;
+    margin: 1em 0;
+    height: 220px;
+
+}
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.frame-blekitna {
+    height: 180px;
+}
+.logo-blekitna {
+    height: 200px;
+}
+
+.frame h2 {
+    margin-top: 110px;
+    text-transform: uppercase;
+    white-space: pre-line;
+    font-family: 'Open Sans';
+    font-weight: 800;
+    font-size: 20pt;
+    margin-bottom: 20px;
+}
+.frame-blekitna h2 {
+    margin-top: 70px;
+}
+
+.frame a {
+    color: #fff;
+    padding: 5px 55px;
+    border-radius: 30px;
+    background: #c7c812;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.frame a:hover {
+    background: #979803;
+    text-decoration: none;
+}
+
+.frame-blekitna a {
+    background: #003580;
+}
+
+.frame-blekitna a:hover {
+    background: #0756c5;
+}
+
+@media screen and (max-width : 768px) {
+    .logo {
+        height: auto;
+    }
+    .frame-blekitna {
+        height: 220px;
+    }
+    .logo-blekitna {
+        max-height: 100px;
+    }
+    .frame-blekitna h2 {
+        margin-top: 89px;
+    }
+}
+
+@media screen and (max-width : 550px) {
+    .frame h2 {
+        font-size: 15pt;
+    }
+    .frame-blekitna h2 {
+        margin-top: 55px;
+    }
+}
+
+@media screen and (max-width : 420px) {
+    .frame h2 {
+        font-size: 10pt;
+        margin-top: 70px;
+    }
+    .frame-blekitna h2 {
+        margin-top: 11px;
+    }
+}

@@ -1,0 +1,52 @@
+<div class="row content">
+
+    <?php if(!empty($posts)): ?>
+        <div class="col-sm-12 head">
+            <div class="container">
+                <h1><?php echo reset($posts)->getName() ?></h1>
+<!--                <h5>Warsztaty dla dzieci:</h5>-->
+<!--                <h5>Ogrody umysłu - ciekawe i skuteczne sposoby terapeutyczne kształtujące prawidłowy rozwój dziecka</h5>-->
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="container text">
+                <?php $i = 0 ?>
+                <?php /* @var $post \CmsIr\Post\Model\Post */ ?>
+                <?php foreach($posts as $post): ?>
+                    <?php /* @var $file \CmsIr\Post\Model\PostFile */ ?>
+                    <?php $file = $post->getFiles() ?>
+
+                    <div class="clear"></div>
+                    <div class="row">
+                        <?php if($i % 2 != 0): ?>
+                            <div class="col-sm-3">
+                                <?php if(!empty($file)): ?>
+                                    <img class="img-responsive" src="/files/post/<?php echo $file->getFilename() ?>" alt=""/>
+                                <?php endif ?>
+                            </div>
+                        <?php endif ?>
+
+                        <div class="col-sm-9">
+
+                            <h6><?php echo $post->getName() ?></h6>
+<!--                            <h6>Arte - kinezjologia</h6>-->
+                            <br/>
+                            <?php echo $post->getText() ?>
+                        </div>
+                        <?php if($i % 2 == 0): ?>
+                            <div class="col-sm-3">
+                                <?php if(!empty($file)): ?>
+                                    <img class="img-responsive" src="/files/post/<?php echo $file->getFilename() ?>" alt=""/>
+                                <?php endif ?>
+                            </div>
+                        <?php endif ?>
+                    </div>
+
+                    <?php $i++ ?>
+                <?php endforeach ?>
+            </div>
+        </div>
+    <?php endif ?>
+
+</div>

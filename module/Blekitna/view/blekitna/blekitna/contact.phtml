@@ -1,0 +1,126 @@
+<div class="row content">
+
+    <div class="col-sm-12 head">
+        <div class="container">
+            <h1>kontakt</h1>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="container price text contact-data">
+            <div class="clear"></div>
+
+            <div class="col-sm-6">
+                <div class="contact-title">
+                    Niepubliczny Specjalny Punkt Przedszkolny <i>Błękitna Kraina</i>
+                </div>
+                ul. Zofii Kossak-Szczuckiej 32 <br/>
+                40-578 Katowice <br/>
+
+                <ul class="contact-list">
+                    <li><img src="/img/phone.png" alt="phone"/> 601 290 441</li>
+                    <li><img src="/img/mail.png" alt="phone"/><a href="mailto:a.nowinska@terapiairozwoj.pl">a.nowinska@terapiairozwoj.pl</a></li>
+                </ul>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>organ prowadzący:</p>
+                        Agnieszka Nowińska <br/>
+                        ul. Fliegera 16/46 <br/>
+                        40-060 katowice <br/>
+                        NIP: 6341096369 <br/>
+                        REGON: 24306311
+                    </div>
+                    <div class="col-sm-6">
+                        <p>rachunek bankowy:</p>
+                        ING Bank Śląski <br/>
+                        55 1050 1214 1000 0090 7112 6099
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2552.1336941167315!2d18.9844094!3d50.2334072!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce8d42961a8f%3A0x74d46de625adb3f6!2sKossak-Szczuckiej+32%2C+40-578+Katowice!5e0!3m2!1spl!2spl!4v1426705019410" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+            </div>
+
+            <div class="clear"></div>
+            <div class="col-sm-12">
+                <div class="contact-title">
+                    formularz kontaktowy
+                </div>
+                <br/>
+
+                <div class="row">
+                    <form action="#">
+                        <div class="col-sm-3">
+                            <input type="text" name="name" placeholder="imię i nazwisko" required="required" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <input type="email" name="mail" placeholder="adres e-mail" required="required" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <input type="text" name="phone" placeholder="telefon kontaktowy" required="required" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <input type="text" name="subject" placeholder="temat wiadomości" required="required" />
+                        </div>
+                        <div class="clear"></div>
+                        <div class="col-sm-12">
+                            <textarea name="content" id="content" placeholder="treść wiadomości"></textarea>
+                        </div>
+
+                        <div class="clear"></div>
+                        <div class="col-md-4" id="confirm"></div>
+                        <div class="col-md-3 pull-right submit">
+                            <input type="submit" value="" id="send-mail"/>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $(".fancybox").fancybox({
+            openEffect	: 'none',
+            closeEffect	: 'none'
+        });
+
+        $('#send-mail').click(function (e) {
+            e.preventDefault();
+
+            var name = $('input[name="name"]').val();
+            var mail = $('input[name="mail"]').val();
+            var phone = $('input[name="phone"]').val();
+            var subject = $('input[name="subject"]').val();
+            var content = $('#content').val();
+
+            $.ajax({
+                type: "POST",
+                url: "/contact-form",
+                dataType : 'json',
+                data: {
+                    name: name,
+                    mail: mail,
+                    phone: phone,
+                    subject: subject,
+                    content: content
+                },
+                success: function(json)
+                {
+                    $('input[name="name"]').val('');
+                    $('input[name="mail"]').val('');
+                    $('input[name="phone"]').val('');
+                    $('input[name="subject"]').val('');
+                    $('#content').val('');
+                    $('#confirm').text(json);
+                }
+            });
+        })
+    });
+</script>

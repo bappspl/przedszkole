@@ -15,6 +15,12 @@ return array(
                 'Page\Controller\Page' => array(
                     'all'	=> 'guest',
                 ),
+                'Page\Controller\Intro' => array(
+                    'all'	=> 'guest',
+                ),
+                'Blekitna\Controller\Blekitna' => array(
+                    'all'	=> 'guest',
+                ),
 
                 // CMS
 				'CmsIr\Authentication\Controller\Index' => array(

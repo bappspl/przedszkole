@@ -11,7 +11,7 @@ gabinet:
 terapeuci:
   node_id: 3
   label: Terapeuci
-  url: /strona/terapeuci
+  url: /terapeuci
   position: 1
 oferta:
   node_id: 4

@@ -1,0 +1,73 @@
+<div class="row content">
+
+    <div class="col-sm-12 head">
+        <div class="container">
+            <h1>cennik</h1>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="container price text">
+            <div class="clear"></div>
+            <div class="price-title">
+                Konsultacja i terapie
+            </div>
+            <div class="row">
+                <div class="col-xs-4 head-price"></div>
+                <div class="col-xs-4 head-price" style="height: 44px; padding-top: 12px;">Diagnoza</div>
+                <div class="col-xs-4 head-price" style="height: 44px; padding-top: 12px;">Terapia (1 godzina)</div>
+            </div>
+
+            <?php /* @var $konsultacja \CmsIr\Price\Model\Price */ ?>
+            <?php foreach($konsultacje as $konsultacja): ?>
+                <?php if($konsultacja->getSecondName() != null): ?>
+
+                    <div class="row">
+                        <div class="col-xs-4 price-content" style="padding: 1px 0 1px;"><?php echo $konsultacja->getName() ?> <br/>
+                            <span style="font-size: 12px;"><?php echo $konsultacja->getSecondName() ?></span>
+                        </div>
+                        <div class="col-xs-4 price-content" style="height: 44px; padding-top: 12px;"><?php echo $konsultacja->getFirst() ?></div>
+                        <div class="col-xs-4 price-content" style="height: 44px; padding-top: 12px;"><?php echo $konsultacja->getSecond() ?></div>
+                    </div>
+
+                <?php else: ?>
+
+                    <div class="row">
+                        <div class="col-xs-4 price-content" style="height: 44px; padding-top: 12px;"><?php echo $konsultacja->getName() ?> <br/>
+                        </div>
+                        <div class="col-xs-4 price-content" style="height: 44px; padding-top: 12px;"><?php echo $konsultacja->getFirst() ?></div>
+                        <div class="col-xs-4 price-content" style="height: 44px; padding-top: 12px;"><?php echo $konsultacja->getSecond() ?></div>
+                    </div>
+
+                <?php endif ?>
+            <?php endforeach ?>
+
+            <div class="clear"></div>
+            <div class="price-title">
+                Cennik treningów słuchowych metodą tomatisa
+            </div>
+
+            <?php /* @var $tom \CmsIr\Price\Model\Price */ ?>
+            <?php foreach($tomatis as $tom): ?>
+                <div class="row">
+                    <div class="col-xs-8 price-content" style="height: 44px; padding-top: 12px;"><?php echo $tom->getName() ?> <span><?php echo $tom->getSecondName() ?></span></div>
+                    <div class="col-xs-4 price-content" style="height: 44px; padding-top: 12px;"><?php echo $tom->getFirst() ?></div>
+                </div>
+            <?php endforeach ?>
+
+            <div class="clear"></div>
+            <div class="price-title">
+                Cennik metody warnkego
+            </div>
+
+            <?php /* @var $warn \CmsIr\Price\Model\Price */ ?>
+            <?php foreach($warnke as $warn): ?>
+                <div class="row">
+                    <div class="col-xs-8 price-content" style="height: 44px; padding-top: 12px;"><?php echo $tom->getName() ?> <span><?php echo $tom->getSecondName() ?></span></div>
+                    <div class="col-xs-4 price-content" style="height: 44px; padding-top: 12px;"><?php echo $tom->getFirst() ?></div>
+                </div>
+            <?php endforeach ?>
+
+        </div>
+    </div>
+</div>

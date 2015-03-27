@@ -19,6 +19,7 @@ return array(
         'CmsIr\Dictionary',
         'CmsIr\Price',
         'CmsIr\File',
+        'Blekitna',
     ),
     'module_listener_options' => array(
         'module_paths' => array(
