@@ -65,10 +65,19 @@ ul.menuH a
 }
 
 /*######sub level###########*/
-
+.table-bordered {
+    width: 100%;
+}
+.table-bordered td {
+    border: 1px solid #fff !important;
+    font-family: 'Open Sans' !important;
+}
+.table-bordered td span {
+    font-family: 'Open Sans' !important;
+}
 ul.menuH ul
 {
-    width:200px;
+    width:320px;
     position: absolute;
     left: -9999px;
     border-top: 0;

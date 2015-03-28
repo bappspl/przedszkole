@@ -263,6 +263,34 @@ return array(
                     ),
                     // Pro comunications
                     array(
+                        'label' => 'O nas',
+                        'route' => 'post',
+                        'params' => array('category' => 'o-nas'),
+                        'visibleInPrimary' => true,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Tworzenie sekcji - O nas',
+                        'route' => 'post/create',
+                        'params' => array('category' => 'o-nas'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Edycja sekcji - O nas',
+                        'route' => 'post/edit',
+                        'params' => array('category' => 'o-nas'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 2
+                    ),
+                    array(
+                        'label' => 'Podgląd sekcji - O nas',
+                        'route' => 'post/preview',
+                        'params' => array('category' => 'o-nas'),
+                        'visibleInPrimary' => false,
+                        'website_id' => 2
+                    ),
+                    array(
                         'label' => 'Gabinet',
                         'route' => 'post',
                         'params' => array('category' => 'gabinet'),
@@ -1027,6 +1055,7 @@ return array(
                 'route' => 'file-main-document',
                 'class' => 'fa fa-file-text',
                 'id'    => 4,
+                'website_id' => 1,
                 'pages' => array(
                     array(
                         'label' => 'Dodaj nowy',
