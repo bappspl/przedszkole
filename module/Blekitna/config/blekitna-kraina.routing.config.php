@@ -51,16 +51,6 @@ return array(
             ),
         ),
     ),
-    'blekitna-contact-form' => array(
-        'type' => 'Segment',
-        'options' => array(
-            'route'    => '/blekitna-kraina/contact-form',
-            'defaults' => array(
-                'controller' => 'Blekitna\Controller\Blekitna',
-                'action'     => 'contactForm',
-            ),
-        ),
-    ),
     'blekitna-dokumenty' => array(
         'type' => 'Segment',
         'options' => array(

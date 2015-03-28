@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'home' => array(
+    'pro-home' => array(
         'type' => 'Zend\Mvc\Router\Http\Literal',
         'options' => array(
             'route'    => '/pro-communications',
@@ -11,7 +11,7 @@ return array(
             ),
         ),
     ),
-    'viewPage' => array(
+    'pro-viewPage' => array(
         'type' => 'Zend\Mvc\Router\Http\Segment',
         'options' => array(
             'route'    => '/pro-communications/strona/:slug',
@@ -21,7 +21,7 @@ return array(
             ),
         ),
     ),
-    'viewPrice' => array(
+    'pro-viewPrice' => array(
         'type' => 'Segment',
         'options' => array(
             'route'    => '/pro-communications/cennik',
@@ -31,7 +31,7 @@ return array(
             ),
         ),
     ),
-     'viewGallery' => array(
+     'pro-viewGallery' => array(
         'type' => 'Segment',
         'options' => array(
             'route'    => '/pro-communications/galeria',
@@ -41,7 +41,7 @@ return array(
             ),
         ),
     ),
-    'viewContact' => array(
+    'pro-viewContact' => array(
         'type' => 'Segment',
         'options' => array(
             'route'    => '/pro-communications/kontakt',
@@ -51,17 +51,17 @@ return array(
             ),
         ),
     ),
-    'contact-form' => array(
+    'pro-contact-form' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/pro-communications/contact-form',
+            'route'    => '/contact-form',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'contactForm',
             ),
         ),
     ),
-    'terapeuci' => array(
+    'pro-terapeuci' => array(
         'type' => 'Segment',
         'options' => array(
             'route'    => '/pro-communications/terapeuci',

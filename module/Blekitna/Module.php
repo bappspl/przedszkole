@@ -15,17 +15,25 @@ class Module
         $moduleRouteListener->attach($eventManager);
 
         $sm = $e->getApplication()->getServiceManager();
-        $menu = $this->getMenuService($sm)->getMenuByMachineName('main-menu', 1);
 
-        $slider = $this->getSliderService($sm)->findOneBySlug('slider-glowny', 1);
+        $controller = $sm->get('request')->getUri()->getPath();
 
-        $files = $this->getFileService($sm)->findLastPictures(12, 1);
+        $controller = $arr = explode('/', $controller);
+        $controller = $controller[1];
 
-        $viewModel = $e->getViewModel();
-        $viewModel->menu = $menu;
-        $viewModel->slider = $slider;
-        $viewModel->files = $files;
+        if($controller == 'blekitna-kraina')
+        {
+            $menu = $this->getMenuService($sm)->getMenuByMachineName('main-menu', 1);
 
+            $slider = $this->getSliderService($sm)->findOneBySlug('slider-glowny', 1);
+
+            $files = $this->getFileService($sm)->findLastPictures(12, 1);
+
+            $viewModel = $e->getViewModel();
+            $viewModel->menu = $menu;
+            $viewModel->slider = $slider;
+            $viewModel->files = $files;
+        }
     }
 
     public function getConfig()
