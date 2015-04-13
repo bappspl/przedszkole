@@ -19,7 +19,7 @@
                     <?php foreach($boss as $b): ?>
 
                         <div class="col-sm-6">
-                            <img class="img-responsive employer" src="/files/users/<?php echo $b->getFilename() ?>" alt=""/>
+                            <img class="img-responsive img-circle employer" src="<?php echo $this->url('thumb', array('entity' => 'users', 'size' => '220x220', 'filename' => $b->getFilename())); ?>" alt=""/>
                             <h6><?php echo $b->getName() ?>  <?php echo $b->getSurname() ?></h6>
                             <div class="position"><?php echo $b-> getPositionDescription() ?></div>
                         </div>
@@ -42,7 +42,7 @@
                         <?php foreach($boss as $b): ?>
 
                             <div class="col-sm-3">
-                                <img class="img-responsive employer" src="/files/users/<?php echo $b->getFilename() ?>" alt=""/>
+                                <img class="img-responsive img-circle employer" src="<?php echo $this->url('thumb', array('entity' => 'users', 'size' => '220x220', 'filename' => $b->getFilename())); ?>" alt=""/>
                                 <h6><?php echo $b->getName() ?>  <?php echo $b->getSurname() ?></h6>
                                 <div class="position"><?php echo $b-> getPositionDescription() ?></div>
                             </div>
@@ -88,9 +88,9 @@
                                     <?php if($type->getId() == $group->getDictionaryGroupId()): ?>
 
                                         <div class="col-sm-6">
-                                            <img class="img-responsive employer" src="/files/users/<?php echo $group->getFilename() ?>" alt=""/>
+                                            <img class="img-responsive img-circle employer" src="<?php echo $this->url('thumb', array('entity' => 'users', 'size' => '220x220', 'filename' => $group->getFilename())); ?>" alt=""/>
                                             <h6><?php echo $group->getName() ?>  <?php echo $group->getSurname() ?></h6>
-                                            <div class="position"><?php echo mb_substr($group->getPositionDescription(), 0, 50, 'utf-8') ?> ...</div>
+                                            <div class="position"><?php echo $group->getPositionDescription() ?> </div>
                                         </div>
 
                                     <?php endif ?>

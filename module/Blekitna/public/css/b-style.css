@@ -7,7 +7,12 @@ body {
 header {
     line-height: 164px;
 }
-
+.fb {
+    position: fixed;
+    right: 0;
+    top: 200px;
+    z-index: 1000;
+}
 .menuH
 {
     margin: 0;
