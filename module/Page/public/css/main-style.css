@@ -132,10 +132,10 @@ ul.menuH ul
 }
 
 
-.grayscale li:hover {
+.grayscale li:hover, .grayscale li.active {
     background: #c7c812;
 }
-.grayscale li:hover a img
+.grayscale li:hover a img, .grayscale li.active a img
 {
     filter: brightness(10);
     -webkit-filter: brightness(10);
@@ -163,7 +163,7 @@ ul.menuH ul
 .grayscale li:hover a .arrow {
     background: url(../img/arrow-hover.png) no-repeat center center;
 }
-.grayscale li:hover a {
+.grayscale li:hover a, .grayscale li.active a{
     color: #fff;
 }
 .show-hide-menu {
@@ -360,7 +360,7 @@ ul.menuH ul
     margin-right: 0;
 }
 .footer-div {
-    background: url(../img/bottom.png) no-repeat;
+    background: url(../img/pro-bottom.png) no-repeat;
     background-position: right 60px bottom;
     padding: 45px 0 45px;
 }

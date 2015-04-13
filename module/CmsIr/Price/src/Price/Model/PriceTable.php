@@ -108,6 +108,7 @@ class PriceTable extends ModelTable
     {
         $data = array(
             'name' => $price->getName(),
+            'second_name' => $price->getName(),
             'category' => $price->getCategory(),
             'website_id' => $price->getWebsiteId(),
             'first' => $price->getFirst(),

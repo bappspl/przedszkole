@@ -642,6 +642,10 @@ header .col-sm-3 img {
     background: url(../img/doc-hover.png) no-repeat;
 }
 
+.doc.statut:hover {
+    background: url(../img/statut.gif) no-repeat;
+}
+
 .scroll {
     display: block;
     text-align: center;

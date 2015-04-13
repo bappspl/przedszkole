@@ -48,8 +48,46 @@ class PageController extends AbstractActionController
             $this->getResponse()->setStatusCode(404);
         }
 
+        switch ($slug)
+        {
+            case 'arteterapia':
+                $first = 'arteterapia';
+                $second = 'Warsztaty dla dzieci: <br> Ogrody umysłu - ciekawe i skuteczne sposoby terapeutyczne kształtujące prawidłowy rozwój dziecka';
+                break;
+            case 'fizjoterapia':
+                $first = 'fizjoterapia';
+                $second = '';
+                break;
+            case 'masaz-shantala':
+                $first = 'masaż Shantala';
+                $second = '';
+                break;
+            case 'integracja-sensoryczna-si':
+                $first = 'integracja sensoryczna SI';
+                $second = '';
+                break;
+            case 'neurologopeda':
+                $first = 'terapia neurologopedyczna i logopedyczna';
+                $second = '';
+                break;
+            case 'psycholog':
+                $first = 'terapia dysleksji Metodą Warnkego';
+                $second = '';
+                break;
+            case 'terapia-czaszkowo-krzyżowa':
+                $first = 'terapia czaszkowo-krzyżowa (cranio-sakralna)';
+                $second = '';
+                break;
+            case 'terapia-warnkego':
+                $first = 'terapia dysleksji Metodą Warnkego';
+                $second = '';
+                break;
+        }
+
         $viewParams = array();
         $viewParams['posts'] = $posts;
+        $viewParams['first'] = $first;
+        $viewParams['second'] = $second;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;

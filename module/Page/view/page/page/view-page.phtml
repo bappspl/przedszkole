@@ -3,8 +3,8 @@
     <?php if(!empty($posts)): ?>
         <div class="col-sm-12 head">
             <div class="container">
-                <h1><?php echo reset($posts)->getName() ?></h1>
-<!--                <h5>Warsztaty dla dzieci:</h5>-->
+                <h1><?php echo $first ?></h1>
+                <h5><?php echo $second ?></h5>
 <!--                <h5>Ogrody umysłu - ciekawe i skuteczne sposoby terapeutyczne kształtujące prawidłowy rozwój dziecka</h5>-->
             </div>
         </div>
@@ -29,7 +29,9 @@
 
                         <div class="col-sm-9">
 
-                            <h6><?php echo $post->getName() ?></h6>
+                            <?php if(strpos($post->getName(),'Sekcja') === false): ?>
+                                 <h6><?php echo $post->getName() ?></h6>
+                            <?php endif ?>
 <!--                            <h6>Arte - kinezjologia</h6>-->
                             <br/>
                             <?php echo $post->getText() ?>

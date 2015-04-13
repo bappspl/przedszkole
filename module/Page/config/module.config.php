@@ -3,8 +3,8 @@
 return array(
     'router' => array(
         'routes' =>  array_merge(
-            include __DIR__ . '/pro-communucations.routing.config.php'
-            //include __DIR__ . '/intro.routing.config.php'
+            include __DIR__ . '/pro-communucations.routing.config.php',
+            include __DIR__ . '/intro.routing.config.php'
         )
     ),
     'controllers' => array(

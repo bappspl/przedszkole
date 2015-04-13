@@ -3,14 +3,42 @@
     <?php if(!empty($posts)): ?>
         <div class="col-sm-12 head">
             <div class="container">
-                <h1><?php echo reset($posts)->getName() ?></h1>
-<!--                <h5>Warsztaty dla dzieci:</h5>-->
+                <h1><?php echo $first ?></h1>
+                <h5><?php echo $second ?></h5>
 <!--                <h5>Ogrody umysłu - ciekawe i skuteczne sposoby terapeutyczne kształtujące prawidłowy rozwój dziecka</h5>-->
             </div>
         </div>
 
         <div class="col-sm-12">
             <div class="container text">
+
+                <div class="clear"></div>
+
+                <!-- Do terapii -->
+
+                <?php if($slug == 'terapia'): ?>
+
+                    <?php $postsHeader = array_chunk($posts, 4) ?>
+                    <?php foreach($postsHeader as $posta): ?>
+
+                        <div class="row scroll-to">
+
+                            <?php /* @var $p \CmsIr\Post\Model\Post */ ?>
+                            <?php foreach($posta as $p): ?>
+
+                                <div class="col-sm-3">
+                                    <a class="scroll" href="scroll-<?php echo $p->getId() ?>"><?php echo $p->getName(); ?></a>
+                                </div>
+
+                            <?php endforeach ?>
+
+                        </div>
+
+                    <?php endforeach ?>
+
+                <?php endif ?>
+
+
                 <?php $i = 0 ?>
                 <?php /* @var $post \CmsIr\Post\Model\Post */ ?>
                 <?php foreach($posts as $post): ?>
@@ -18,7 +46,7 @@
                     <?php $file = $post->getFiles() ?>
 
                     <div class="clear"></div>
-                    <div class="row">
+                    <div class="row" id="scroll-<?php echo $post->getId() ?>">
                         <?php if($i % 2 != 0): ?>
                             <div class="col-sm-3">
                                 <?php if(!empty($file)): ?>
@@ -29,7 +57,9 @@
 
                         <div class="col-sm-9">
 
-                            <h6><?php echo $post->getName() ?></h6>
+                            <?php if(strpos($post->getName(),'Sekcja') === false): ?>
+                                <h6><?php echo $post->getName() ?></h6>
+                            <?php endif ?>
 <!--                            <h6>Arte - kinezjologia</h6>-->
                             <br/>
                             <?php echo $post->getText() ?>
@@ -50,3 +80,20 @@
     <?php endif ?>
 
 </div>
+
+<script>
+    function goToByScroll(id){
+        // Reove "link" from the ID
+        // Scroll
+        $('html,body').animate({
+                scrollTop: $("#"+id).offset().top},
+            'slow');
+    }
+
+    $(".scroll-to a").click(function(e) {
+        // Prevent a page reload when a link is pressed
+        e.preventDefault();
+        // Call the scroll function
+        goToByScroll($(this).attr("href"));
+    });
+</script>

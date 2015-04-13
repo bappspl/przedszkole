@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'home-intro' => array(
+    'home' => array(
         'type' => 'Zend\Mvc\Router\Http\Literal',
         'options' => array(
             'route'    => '/',

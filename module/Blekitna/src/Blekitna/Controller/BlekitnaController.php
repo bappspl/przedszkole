@@ -61,8 +61,43 @@ class BlekitnaController extends AbstractActionController
             $this->getResponse()->setStatusCode(404);
         }
 
+        switch ($slug)
+        {
+            case 'o-nas':
+                $first = 'dlaczego-my';
+                $second = '';
+                break;
+            case 'nasze-przedszkole':
+                $first = 'nasze przedszkole';
+                $second = '';
+                break;
+            case 'wizja-i-misja':
+                $first = 'wizja i misja';
+                $second = '';
+                break;
+            case 'dzien-w-przedszkolu':
+                $first = 'dzien w przedszkolu';
+                $second = '';
+                break;
+            case 'terapia':
+                $first = 'terapie';
+                $second = '';
+                break;
+            case 'wczesne-wspomaganie-rozwoju':
+                $first = 'wczesne wspomaganie rozwoju';
+                $second = '';
+                break;
+            case 'informacje':
+                $first = 'informacje';
+                $second = '';
+                break;
+        }
+
         $viewParams = array();
         $viewParams['posts'] = $posts;
+        $viewParams['first'] = $first;
+        $viewParams['second'] = $second;
+        $viewParams['slug'] = $slug;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;
