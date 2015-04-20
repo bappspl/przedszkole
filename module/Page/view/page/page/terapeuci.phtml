@@ -13,7 +13,7 @@
                 <div class="clear"></div>
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3">
-                        <img class="img-responsive employer" src="/files/users/<?php echo $boss->getFilename() ?>" alt="boss"/>
+                        <img class="img-responsive img-circle employer" src="<?php echo $this->url('thumb', array('entity' => 'users', 'size' => '220x220', 'filename' => $boss->getFilename())); ?>" alt=""/>
                         <h6><?php echo $boss->getName() ?> <?php echo $boss->getSurname() ?></h6>
                         <div class="position"><b>właściciel</b><?php echo $boss->getPositionDescription() ?></div>
                     </div>
@@ -31,7 +31,7 @@
                         <?php foreach($four as $person): ?>
 
                             <div class="col-sm-3">
-                                <img class="img-responsive employer" src="/files/users/<?php echo $person->getFilename() ?>" alt=""/>
+                                <img class="img-responsive img-circle employer" src="<?php echo $this->url('thumb', array('entity' => 'users', 'size' => '220x220', 'filename' => $person->getFilename())); ?>" alt=""/>
                                 <h6><?php echo $person->getName() ?> <?php echo $person->getSurname() ?></h6>
                                 <div class="position"><?php echo $person->getPositionDescription() ?></div>
                             </div>
