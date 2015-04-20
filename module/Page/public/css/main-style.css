@@ -572,3 +572,17 @@ ul.menuH ul
     background: url(../img/form-send-hover.png) no-repeat;
     background-size: contain;
 }
+
+.change-site{
+    position: fixed;
+    right: 0;
+    top: 300px;
+    z-index: 1000;
+}
+
+.fb {
+    position: fixed;
+    right: 0;
+    top: 200px;
+    z-index: 1000;
+}

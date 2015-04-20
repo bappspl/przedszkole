@@ -4,7 +4,7 @@ return array(
     'pro-home' => array(
         'type' => 'Zend\Mvc\Router\Http\Literal',
         'options' => array(
-            'route'    => '/pro-communications',
+            'route'    => '/pro-comunications',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'home',
@@ -14,7 +14,7 @@ return array(
     'pro-viewPage' => array(
         'type' => 'Zend\Mvc\Router\Http\Segment',
         'options' => array(
-            'route'    => '/pro-communications/strona/:slug',
+            'route'    => '/pro-comunications/strona/:slug',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'viewPage',
@@ -24,7 +24,7 @@ return array(
     'pro-viewPrice' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/pro-communications/cennik',
+            'route'    => '/pro-comunications/cennik',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'price',
@@ -34,7 +34,7 @@ return array(
      'pro-viewGallery' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/pro-communications/galeria',
+            'route'    => '/pro-comunications/galeria',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'gallery',
@@ -44,7 +44,7 @@ return array(
     'pro-viewContact' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/pro-communications/kontakt',
+            'route'    => '/pro-comunications/kontakt',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'contact',
@@ -64,7 +64,7 @@ return array(
     'pro-terapeuci' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/pro-communications/terapeuci',
+            'route'    => '/pro-comunications/terapeuci',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'terapeuci',
